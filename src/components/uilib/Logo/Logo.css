@@ -1,0 +1,28 @@
+.logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.logo-image-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo-image-container.name {
+    margin-left: 5px;
+}
+
+.logo-image.icon{
+    height: 40px;
+    object-fit: cover;
+}
+
+.logo-image.name{
+    height: 25px;    
+    object-fit: cover;
+    margin-left: 5px;
+}

@@ -1,0 +1,18 @@
+.account-button {
+    height: 40px;
+    background: #34B199;
+    border-radius: 20px;
+    color: white;
+    margin-right: 30px;
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-button:hover {
+    background: rgba(52, 177, 153, 0.8);
+}
