@@ -1,42 +1,37 @@
 import './LineChart.css';
 
 import { Line } from 'react-chartjs-2';
-import { useSelector, useDispatch } from "react-redux";
+
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
 
 
-export default function LineChart() {
-    const { ticker } = useSelector(state => state.stock);
-    const { close } = useSelector(state => state.stock);
-    const { date } = useSelector(state => state.stock);
-    const { plotPeriod } = useSelector(state => state.stock);
+export default function LineChart(props) {
+    const periodNameList = props.periodNameList;
+    const periodState = props.periodState;
+    const xdata = props.xdata;
+    const ydata = props.ydata;
+    
+
+    const periodButtonList = periodNameList.map((periodName,index) => 
+                                (<PeriodButton key={index} periodName={periodName} plotPeriod={periodState}></PeriodButton>))
+    
 
     return (
         <div className='chart-canvas'>
             <div className='period-picker-container'>
-                <PeriodButton periodName="1일" plotPeriod={plotPeriod}></PeriodButton>
-                <PeriodButton periodName="1주" plotPeriod={plotPeriod}></PeriodButton>
-                <PeriodButton periodName="1달" plotPeriod={plotPeriod}></PeriodButton>
-                <PeriodButton periodName="3달" plotPeriod={plotPeriod}></PeriodButton>
-                <PeriodButton periodName="6달" plotPeriod={plotPeriod}></PeriodButton>
-                <PeriodButton periodName="1년" plotPeriod={plotPeriod}></PeriodButton>
-                <PeriodButton periodName="2년" plotPeriod={plotPeriod}></PeriodButton>
-                <PeriodButton periodName="5년" plotPeriod={plotPeriod}></PeriodButton>
-                <PeriodButton periodName="10년" plotPeriod={plotPeriod}></PeriodButton>
-                <PeriodButton periodName="최대" plotPeriod={plotPeriod}></PeriodButton>
+                {periodButtonList}
             </div>
             <Line
                 className='stock-price-graph'
                 data={{
-                    labels: {date}.date,
+                    labels: xdata,
                     datasets: [
                         {
-                        label: {ticker}.ticker,
                         backgroundColor: 'rgba(75,192,192,1)',
                         borderColor: 'rgba(154,216,205,1)',
                         borderWidth: 2,
-                        data: {close}.close,
+                        data: ydata,
                         pointRadius: 0
                         }
                     ]

@@ -1,24 +1,19 @@
 import './TagBox.css';
-import { useSelector, useDispatch } from "react-redux";
 
-function TagBoxGroup() {
-    const { tagList } = useSelector(state => state.stock);
-
-    const tagboxList = tagList.map((tag,index) => (<TagBox key={index} tagName={tag}></TagBox>))
+export default function TagBox(props) {
+    const TagList = props.tagList.map((tag,index) => (<TagUnit key={index} tagName={tag}></TagUnit>));
 
     return (
-        <div className='tag-box-group'>
-            {tagboxList}
+        <div className='tag-box'>
+            {TagList}
         </div>
     )    
 }
 
-function TagBox(props) {
+function TagUnit(props) {
     return (
-        <div className='tag-box'>
+        <div className='tag'>
             { props.tagName }
         </div>
     )
 }
-
-export default TagBoxGroup;
