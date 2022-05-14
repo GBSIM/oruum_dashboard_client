@@ -1,13 +1,13 @@
-.quarter-table-container {
+.periodic-table-container {
     margin-top: 30px;
     /* width: calc(100vw-250px); */
 }
 
-.quarter-table-header {
+.periodic-table-header {
     color: #696969;
 }
 
-.quarter-table-row {
+.periodic-table-row {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,11 +16,11 @@
     padding-bottom: 15px;
 }
 
-.quarter-table-row.date {
+.periodic-table-row.date {
     border-bottom: 2px solid #DCDCDC;
 }
 
-.quarter-table-row-header {
+.periodic-table-row-header {
     width: 150px;
     flex-shrink: 0;
     font-size: 1rem;
@@ -28,14 +28,14 @@
     color: #696969;
 }
 
-.quarter-table-content {
+.periodic-table-content {
     flex-grow: 1;
     color: #696969;
     font-size: 1rem;
     text-align: center;
 }
 
-.quarter-table-unit {
+.periodic-table-unit {
     flex-grow: 1;
     margin-top: 10px;
     color: #B9B9B9;

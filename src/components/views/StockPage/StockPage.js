@@ -8,7 +8,7 @@ import TagBox from "../../uilib/TagBox/TagBox";
 import PriceBox from "../../uilib/PriceBox/PriceBox";
 import LineChart from '../../uilib/Chart/LineChart';
 import CheckPointBox from "../../uilib/CheckPointBox/CheckPointBox";
-import QuarterTalbe from "../../uilib/QuarterTable/QuarterTable";
+import PeriodicTable from "../../uilib/QuarterTable/PeriodicTable";
 
 function StockPage() {
     const { name, ticker } = useSelector(state => state.stock);
@@ -40,6 +40,10 @@ function StockPage() {
                           quarterFinancingCashFlowList,quarterNetChangeCashFlowList];
     const cashflowNameList = ['영업활동 현금','투자활동 현금흐름','재무활동 현금흐름','현금순변동'];
 
+    const { quarterDividendList, dividendUnit} = useSelector(state => state.stock);
+    const dividendList = [quarterDividendList];
+    const dividendNameList = ['배당금'];
+
     return (
         <div className='page'>
             <NavBar></NavBar>
@@ -69,24 +73,31 @@ function StockPage() {
                             checkPointList={checkListSell}
                             image={require('./images/icon_down.png')}></CheckPointBox>
                     </div>
-                    <QuarterTalbe 
+                    <PeriodicTable 
                             title='손익계산서'
                             periodList={quarterPeriodList}
                             dataLists={incomeList} 
                             dataNameList={incomeNameList}
-                            unit={financialDataUnit}></QuarterTalbe>
-                    <QuarterTalbe 
+                            unit={financialDataUnit}></PeriodicTable>
+                    <PeriodicTable 
                             title='대차대조표'
                             periodList={quarterPeriodList}
                             dataLists={balanceList} 
                             dataNameList={balanceNameList}
-                            unit={financialDataUnit}></QuarterTalbe>
-                    <QuarterTalbe 
+                            unit={financialDataUnit}></PeriodicTable>
+                    <PeriodicTable 
                             title='현금흐름표'
                             periodList={quarterPeriodList}
                             dataLists={cashflowList} 
                             dataNameList={cashflowNameList}
-                            unit={financialDataUnit}></QuarterTalbe>
+                            unit={financialDataUnit}></PeriodicTable>
+                    <PeriodicTable 
+                            title='배당금'
+                            periodList={quarterPeriodList}
+                            dataLists={dividendList} 
+                            dataNameList={dividendNameList}
+                            unit={dividendUnit}></PeriodicTable>
+
                 </div>
             </div>
         </div>
