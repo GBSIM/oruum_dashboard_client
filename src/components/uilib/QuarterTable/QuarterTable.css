@@ -21,7 +21,7 @@
 }
 
 .quarter-table-row-header {
-    width: 100px;
+    width: 150px;
     flex-shrink: 0;
     font-size: 1rem;
     font-weight: 500;
@@ -31,7 +31,8 @@
 .quarter-table-content {
     flex-grow: 1;
     color: #696969;
-    font-size: 1rem;    
+    font-size: 1rem;
+    text-align: center;
 }
 
 .quarter-table-unit {

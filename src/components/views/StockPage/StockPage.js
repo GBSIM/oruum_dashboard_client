@@ -11,33 +11,34 @@ import CheckPointBox from "../../uilib/CheckPointBox/CheckPointBox";
 import QuarterTalbe from "../../uilib/QuarterTable/QuarterTable";
 
 function StockPage() {
-    const { name } = useSelector(state => state.stock);
-    const { ticker } = useSelector(state => state.stock);
+    const { name, ticker } = useSelector(state => state.stock);
 
-    const { date } = useSelector(state => state.stock);
-    const { close } = useSelector(state => state.stock);
+    const { date, close } = useSelector(state => state.stock);
 
-    const { plotPeriod } = useSelector(state => state.stock);
+    const { plotPeriod, tagList} = useSelector(state => state.stock);
 
-    const { tagList } = useSelector(state => state.stock);
-
-    const { currency } = useSelector(state => state.stock);
-    const { currentPrice } = useSelector(state => state.stock);
-    const { lastChange } = useSelector(state => state.stock);
-    const { lastChangeRate } = useSelector(state => state.stock);
-    const { lastChangeSign } = useSelector(state => state.stock);
+    const { currency, currentPrice, lastChange, lastChangeRate, lastChangeSign } = useSelector(state => state.stock);
     
-    const { checkListBuy } = useSelector(state => state.stock);
-    const { checkListSell } = useSelector(state => state.stock);
+    const { checkListBuy, checkListSell } = useSelector(state => state.stock);
 
-    const { financialDataUnit } = useSelector(state => state.stock);
-    const { quarterPeriodList } = useSelector(state => state.stock);
-    const { quarterRevenueList } = useSelector(state => state.stock);
-    const { quarterGrossProfitList } = useSelector(state => state.stock);
-    const { quarterOperatingIncomeList } = useSelector(state => state.stock);
-    const { quarterNetIncomeList } = useSelector(state => state.stock);
+    const { financialDataUnit, quarterPeriodList } = useSelector(state => state.stock);
+
+    const { quarterRevenueList, quarterGrossProfitList, 
+            quarterOperatingIncomeList, quarterNetIncomeList} = useSelector(state => state.stock);
     const incomeList = [quarterRevenueList,quarterGrossProfitList,quarterOperatingIncomeList,quarterNetIncomeList];
-    const incomeHeaderList = ['총매출','매출 총이익','영업 이익','순이익'];
+    const incomeNameList = ['총매출','매출 총이익','영업 이익','순이익'];
+
+    const { quarterAssetList, quarterLiabilitiesList, 
+            quarterEquityList, quarterCurrentAssetList,quarterCurrentLiabilitiesList} = useSelector(state => state.stock);
+    const balanceList = [quarterAssetList,quarterLiabilitiesList,quarterEquityList,
+                         quarterCurrentAssetList,quarterCurrentLiabilitiesList];
+    const balanceNameList = ['총 자산','총 부채','총 자산','유동자산','유동부채'];
+
+    const { quarterOperatingCashFlowList, quarterInvestingCashFlowList, 
+            quarterFinancingCashFlowList, quarterNetChangeCashFlowList} = useSelector(state => state.stock);
+    const cashflowList = [quarterOperatingCashFlowList,quarterInvestingCashFlowList,
+                          quarterFinancingCashFlowList,quarterNetChangeCashFlowList];
+    const cashflowNameList = ['영업활동 현금','투자활동 현금흐름','재무활동 현금흐름','현금순변동'];
 
     return (
         <div className='page'>
@@ -72,7 +73,19 @@ function StockPage() {
                             title='손익계산서'
                             periodList={quarterPeriodList}
                             dataLists={incomeList} 
-                            dataNameList={incomeHeaderList}
+                            dataNameList={incomeNameList}
+                            unit={financialDataUnit}></QuarterTalbe>
+                    <QuarterTalbe 
+                            title='대차대조표'
+                            periodList={quarterPeriodList}
+                            dataLists={balanceList} 
+                            dataNameList={balanceNameList}
+                            unit={financialDataUnit}></QuarterTalbe>
+                    <QuarterTalbe 
+                            title='현금흐름표'
+                            periodList={quarterPeriodList}
+                            dataLists={cashflowList} 
+                            dataNameList={cashflowNameList}
                             unit={financialDataUnit}></QuarterTalbe>
                 </div>
             </div>
