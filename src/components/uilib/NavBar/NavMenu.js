@@ -18,28 +18,24 @@ function NavMenu(props) {
                   currentPage = { page }
                   onImage={require('./images/icon_home_on.png')} 
                   offImage={require('./images/icon_home_off.png')}
-                  inOn={true} 
                   ></Menu>
             <Menu menuText="주식 데이터"
                   menuName="Stock"
                   currentPage = { page }
                   onImage={require('./images/icon_stock_on.png')} 
                   offImage={require('./images/icon_stock_off.png')}
-                  inOn={true} 
                   ></Menu>
             <Menu menuText="경제 데이터"
                   menuName="Economy"
                   currentPage = { page }
                   onImage={require('./images/icon_economy_on.png')} 
                   offImage={require('./images/icon_economy_off.png')}
-                  inOn={false} 
                   ></Menu>
             <Menu menuText="산업 데이터"
                   menuName="Industry"
                   currentPage = { page }
                   onImage={require('./images/icon_industry_on.png')} 
                   offImage={require('./images/icon_industry_off.png')}
-                  inOn={false} 
                   ></Menu>
         </div>
     )
