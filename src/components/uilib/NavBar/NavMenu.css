@@ -19,7 +19,7 @@
     height: 50px;
     width: 100%;
     background-color: #fff;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -28,17 +28,17 @@
 
 .menu.on {
     background: #F8F8F8;
-    color: #696969;
+    color: #34B199;
     font-weight: 500;
 }
 
 .menu:hover {
-    color: #696969;
+    background: #F8F8F8;
 }
 
 .menu-image-container {
-    height: 30px;
-    width: 30px;
+    height: 24px;
+    width: 24px;
     margin-left: 33px;
 }
 

@@ -1,6 +1,6 @@
 .summary-container {
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-top: 30px;
+    padding-top: 10px;
     border-top: 1px solid #DCDCDC;
     display: flex;
     flex-direction: row;
@@ -8,6 +8,8 @@
 }
 
 .summary-row {
+    margin-top: 5px;
+    margin-bottom: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -17,6 +19,24 @@
 
 .summary-rows {
     flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+}
+
+.summary-rows-grey-line {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.grey-line {
+    width: 1px;
+    background-color: #DCDCDC;
+    height: 100%;
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 90%;
 }
 
 .summary-row-title {

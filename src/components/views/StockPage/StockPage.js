@@ -9,6 +9,7 @@ import PriceBox from "../../uilib/PriceBox/PriceBox";
 import LineChart from '../../uilib/Chart/LineChart';
 import CheckPointBox from "../../uilib/CheckPointBox/CheckPointBox";
 import PeriodicTable from "../../uilib/QuarterTable/PeriodicTable";
+import Summary from "../../uilib/Summary/Summary";
 
 function StockPage() {
     const { name, ticker } = useSelector(state => state.stock);
@@ -18,6 +19,18 @@ function StockPage() {
     const { plotPeriod, tagList} = useSelector(state => state.stock);
 
     const { currency, currentPrice, lastChange, lastChangeRate, lastChangeSign } = useSelector(state => state.stock);
+
+    const {lastOpen, lastHigh, lastLow, lastVolume, forwardPER, capability, yearlyHigh, yearlyLow,
+           fallingRatio, EPS, ttmPER, ttmPSR} = useSelector(state => state.stock);
+
+    const summaryTitleList = ["시작가","최고가","최저가",
+                              "거래량","f/w PER","시가총액",
+                              "52주 최고","52주 최저","고점대비 하락률",
+                              "주당순이익","PER(TTM)","PSR(TTM)"];
+    const summaryValueList = [lastOpen, lastHigh, lastLow, 
+                              lastVolume, forwardPER, capability, 
+                              yearlyHigh, yearlyLow, fallingRatio,
+                              EPS, ttmPER, ttmPSR];
     
     const { checkListBuy, checkListSell } = useSelector(state => state.stock);
 
@@ -63,6 +76,10 @@ function StockPage() {
                         periodState={plotPeriod}
                         xdata={{date}.date}
                         ydata={{close}.close}></LineChart>
+                    <Summary 
+                        titleList={summaryTitleList} 
+                        valueList={summaryValueList} 
+                        numberRows = {3}></Summary>
                     <div style={{"display":"flex","flexDirection":"row"}}>
                         <CheckPointBox 
                             headerText={{ticker}.ticker+', 매수하자!'} 
