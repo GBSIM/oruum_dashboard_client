@@ -8,8 +8,10 @@ import TagBox from "../../uilib/TagBox/TagBox";
 import PriceBox from "../../uilib/PriceBox/PriceBox";
 import LineChart from '../../uilib/Chart/LineChart';
 import CheckPointBox from "../../uilib/CheckPointBox/CheckPointBox";
-import PeriodicTable from "../../uilib/QuarterTable/PeriodicTable";
+import PeriodicTable from "../../uilib/PeriodicTable/PeriodicTable";
 import Summary from "../../uilib/Summary/Summary";
+import BarChart from "../../uilib/Chart/BarChart";
+import * as colorGroup from '../../../Color.js';
 
 function StockPage() {
     const { name, ticker } = useSelector(state => state.stock);
@@ -57,6 +59,11 @@ function StockPage() {
     const dividendList = [quarterDividendList];
     const dividendNameList = ['배당금'];
 
+    const barBackgroundColorList = [colorGroup.deepGreen,colorGroup.oruumGreen,colorGroup.lightGreen,colorGroup.whiteGreen]
+    const barBorderColorList = barBackgroundColorList;
+    const barHoverBackgroundColorList = [colorGroup.hoverDeepGreen,colorGroup.hoverOruumGreen,colorGroup.hoverLightGreen,colorGroup.hoverWhiteGreen];
+    const barHoverBorderColorLIst = barHoverBackgroundColorList;
+
     return (
         <div className='page'>
             <NavBar></NavBar>
@@ -90,18 +97,59 @@ function StockPage() {
                             checkPointList={checkListSell}
                             image={require('./images/icon_down.png')}></CheckPointBox>
                     </div>
-                    <PeriodicTable 
+                    {/* <PeriodicTable 
                             title='손익계산서'
                             periodList={quarterPeriodList}
                             dataLists={incomeList} 
                             dataNameList={incomeNameList}
-                            unit={financialDataUnit}></PeriodicTable>
-                    <PeriodicTable 
+                            unit={financialDataUnit}></PeriodicTable> */}
+                    <BarChart
+                        title={'손익계산서'}
+                        labelList={incomeNameList}
+                        xdata={quarterPeriodList}
+                        ydataList={incomeList}
+                        backgroundColorList={barBackgroundColorList}
+                        borderColorList={barBorderColorList}
+                        hoverBackgroundColorList={barHoverBackgroundColorList}
+                        hoverBorderColorList={barHoverBorderColorLIst}
+                        unit={financialDataUnit}></BarChart>
+                    <BarChart
+                        title={'대차대조표'}
+                        labelList={balanceNameList}
+                        xdata={quarterPeriodList}
+                        ydataList={balanceList}
+                        backgroundColorList={barBackgroundColorList}
+                        borderColorList={barBorderColorList}
+                        hoverBackgroundColorList={barHoverBackgroundColorList}
+                        hoverBorderColorList={barHoverBorderColorLIst}
+                        unit={financialDataUnit}></BarChart>
+                    <BarChart
+                        title={'현금흐름표'}
+                        labelList={cashflowNameList}
+                        xdata={quarterPeriodList}
+                        ydataList={cashflowList}
+                        backgroundColorList={barBackgroundColorList}
+                        borderColorList={barBorderColorList}
+                        hoverBackgroundColorList={barHoverBackgroundColorList}
+                        hoverBorderColorList={barHoverBorderColorLIst}
+                        unit={financialDataUnit}></BarChart>
+                    <BarChart
+                        title={'배당금'}
+                        labelList={dividendNameList}
+                        xdata={quarterPeriodList}
+                        ydataList={dividendList}
+                        backgroundColorList={[colorGroup.oruumGreen]}
+                        borderColorList={[colorGroup.oruumGreen]}
+                        hoverBackgroundColorList={[colorGroup.hoverOruumGreen]}
+                        hoverBorderColorList={[colorGroup.hoverOruumGreen]}
+                        unit={dividendUnit}></BarChart>
+                    {/* <PeriodicTable 
                             title='대차대조표'
                             periodList={quarterPeriodList}
                             dataLists={balanceList} 
                             dataNameList={balanceNameList}
                             unit={financialDataUnit}></PeriodicTable>
+                    
                     <PeriodicTable 
                             title='현금흐름표'
                             periodList={quarterPeriodList}
@@ -113,7 +161,7 @@ function StockPage() {
                             periodList={quarterPeriodList}
                             dataLists={dividendList} 
                             dataNameList={dividendNameList}
-                            unit={dividendUnit}></PeriodicTable>
+                            unit={dividendUnit}></PeriodicTable> */}
 
                 </div>
             </div>
