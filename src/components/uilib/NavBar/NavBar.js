@@ -6,7 +6,7 @@ function NavBar(props) {
     return (
         <div className="nav-bar">
             <div className="logo-container">
-                <Logo containerHeight="60px" imageHeight="40px"></Logo>
+                <Logo containerHeight="60px" imageHeight="60px"></Logo>
             </div>
             <NavMenu marginTop="40px"></NavMenu>
         </div>

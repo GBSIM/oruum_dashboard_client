@@ -12,13 +12,13 @@ function NavMenu(props) {
 
     return (
         <div className='nav-menu' style={{marginTop:props.marginTop}}>
-            <NavMenuTitle titleName='데이터 둘러보기' ></NavMenuTitle>
             <Menu menuText="대쉬보드 홈"
                   menuName="Dashboard"
                   currentPage = { page }
                   onImage={require('./images/icon_home_on.png')} 
                   offImage={require('./images/icon_home_off.png')}
                   ></Menu>
+            <div className='menu-grey-line'></div>
             <Menu menuText="주식 데이터"
                   menuName="Stock"
                   currentPage = { page }
@@ -36,6 +36,19 @@ function NavMenu(props) {
                   currentPage = { page }
                   onImage={require('./images/icon_industry_on.png')} 
                   offImage={require('./images/icon_industry_off.png')}
+                  ></Menu>
+            <div className='menu-grey-line'></div>
+            <Menu menuText="포트폴리오 관리"
+                  menuName="Portfolio"
+                  currentPage = { page }
+                  onImage={require('./images/icon_portfolio_on.png')} 
+                  offImage={require('./images/icon_portfolio_off.png')}
+                  ></Menu>
+            <Menu menuText="시뮬레이션"
+                  menuName="Simulation"
+                  currentPage = { page }
+                  onImage={require('./images/icon_simulation_on.png')} 
+                  offImage={require('./images/icon_simulation_off.png')}
                   ></Menu>
         </div>
     )

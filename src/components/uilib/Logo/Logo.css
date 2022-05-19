@@ -16,13 +16,18 @@
     margin-left: 5px;
 }
 
-.logo-image.icon{
+.logo-image.icon {
     height: 40px;
     object-fit: cover;
 }
 
-.logo-image.name{
+.logo-image.name {
     height: 25px;    
     object-fit: cover;
     margin-left: 5px;
+}
+
+.logo-image.manager {
+    height: 60px;
+    object-fit: cover;
 }

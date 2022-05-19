@@ -27,8 +27,8 @@
 }
 
 .menu.on {
-    background: #F8F8F8;
-    color: #34B199;
+    /* background: #F8F8F8; */
+    color: #696969;
     font-weight: 500;
 }
 
@@ -45,4 +45,10 @@
 .menu-text {
     font-size: 16px;
     margin-left: 13px; 
+}
+
+.menu-grey-line {
+    height: 1px;
+    margin: 10px 20px 10px 20px;
+    background: #DCDCDC;
 }
