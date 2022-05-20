@@ -34,8 +34,7 @@
 
 .menu:hover {
     /* background: #FAFAFA; */
-    /* color: #696969; */
-    background: rgba(255,255,255,0.7);
+    color: #696969;
 }
 
 .menu-image-container {
@@ -61,6 +60,9 @@
     }
     .menu {
         width: 60px;
+    }
+    .menu:hover {
+        background: rgba(255,255,255,0.7);
     }
     .menu-image-container {
         margin: auto;
