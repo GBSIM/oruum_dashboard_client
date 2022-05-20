@@ -74,7 +74,7 @@ function StockPage() {
                 <div className='stock-page'>
                     <div style={{"display":"flex","flexDirection":"row","alignItems":"center"}}>
                         <StockLogo></StockLogo>
-                        <div style={{"marginLeft":"20px"}}>
+                        <div>
                             <Name name={ name } subname={ ticker }></Name>
                             <PriceBox currency = {currency}
                                 currentPrice={currentPrice}
@@ -87,16 +87,16 @@ function StockPage() {
                     
                     <TagBox tagList={tagList}></TagBox>
                     
-                    <LineChart 
+                    {/* <LineChart 
                         periodNameList={["1일","1주","1달","3달","6달","1년","2년","5년","10년","최대"]} 
                         periodState={plotPeriod}
                         xdata={{date}.date}
-                        ydata={{close}.close}></LineChart>
-                    <Summary 
+                        ydata={{close}.close}></LineChart> */}
+                    {/* <Summary 
                         titleList={summaryTitleList} 
                         valueList={summaryValueList} 
-                        numberRows = {3}></Summary>
-                    <div style={{"display":"flex","flexDirection":"row"}}>
+                        numberRows = {3}></Summary> */}
+                    <div className='check-box-container'>
                         <CheckPointBox 
                             headerText={{ticker}.ticker+', 매수하자!'} 
                             checkPointList={checkListBuy}
@@ -131,7 +131,7 @@ function StockPage() {
                             dataLists={dividendList} 
                             dataNameList={dividendNameList}
                             unit={dividendUnit}></PeriodicTable> */}
-                    <BarChart
+                    {/* <BarChart
                         title={'손익계산서'}
                         labelList={incomeNameList}
                         xdata={quarterPeriodList}
@@ -170,7 +170,7 @@ function StockPage() {
                         borderColorList={[colorGroup.lightGreen]}
                         hoverBackgroundColorList={[colorGroup.hoverLightGreen]}
                         hoverBorderColorList={[colorGroup.hoverLightGreen]}
-                        unit={dividendUnit}></BarChart>
+                        unit={dividendUnit}></BarChart> */}
                 </div>
             </div>
         </div>
