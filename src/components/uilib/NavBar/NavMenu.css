@@ -33,7 +33,8 @@
 }
 
 .menu:hover {
-    background: #FAFAFA;
+    /* background: #FAFAFA; */
+    color: #696969;
 }
 
 .menu-image-container {
