@@ -5,9 +5,11 @@
 
 .name {
     color: #005041;
+    margin: 0;
 }
 
 .subname {
     color: #B9B9B9;
     margin-left: 10px;
+    margin-bottom: 0px;
 }

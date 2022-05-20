@@ -29,7 +29,7 @@ export default function BarChart(props) {
     } 
 
     return (
-        <div className='chart-canvas'>
+        <div className='bar-chart-canvas'>
             <h2 className='chart-title'>{title}</h2>
             <Bar
                 className='stock-price-graph'

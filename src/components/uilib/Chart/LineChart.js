@@ -18,7 +18,7 @@ export default function LineChart(props) {
     
 
     return (
-        <div className='chart-canvas'>
+        <div className='line-chart-canvas'>
             <div className='period-picker-container'>
                 {periodButtonList}
             </div>

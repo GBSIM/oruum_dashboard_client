@@ -11,6 +11,7 @@ import CheckPointBox from "../../uilib/CheckPointBox/CheckPointBox";
 import PeriodicTable from "../../uilib/PeriodicTable/PeriodicTable";
 import Summary from "../../uilib/Summary/Summary";
 import BarChart from "../../uilib/Chart/BarChart";
+import StockLogo from "../../uilib/Logo/StockLogo";
 import * as colorGroup from '../../../Color.js';
 
 function StockPage() {
@@ -71,13 +72,21 @@ function StockPage() {
                 <Header>
                 </Header>
                 <div className='stock-page'>
-                    <Name name={ name } subname={ ticker }></Name>
+                    <div style={{"display":"flex","flexDirection":"row","alignItems":"center"}}>
+                        <StockLogo></StockLogo>
+                        <div style={{"marginLeft":"20px"}}>
+                            <Name name={ name } subname={ ticker }></Name>
+                            <PriceBox currency = {currency}
+                                currentPrice={currentPrice}
+                                lastChange={lastChange}
+                                lastChangeRate={lastChangeRate}
+                                lastChangeSign={lastChangeSign}></PriceBox>
+                        </div>
+                    </div>
+                    
+                    
                     <TagBox tagList={tagList}></TagBox>
-                    <PriceBox currency = {currency}
-                              currentPrice={currentPrice}
-                              lastChange={lastChange}
-                              lastChangeRate={lastChangeRate}
-                              lastChangeSign={lastChangeSign}></PriceBox>
+                    
                     <LineChart 
                         periodNameList={["1일","1주","1달","3달","6달","1년","2년","5년","10년","최대"]} 
                         periodState={plotPeriod}
@@ -103,6 +112,25 @@ function StockPage() {
                             dataLists={incomeList} 
                             dataNameList={incomeNameList}
                             unit={financialDataUnit}></PeriodicTable> */}
+                    {/* <PeriodicTable 
+                            title='대차대조표'
+                            periodList={quarterPeriodList}
+                            dataLists={balanceList} 
+                            dataNameList={balanceNameList}
+                            unit={financialDataUnit}></PeriodicTable>
+                    
+                    <PeriodicTable 
+                            title='현금흐름표'
+                            periodList={quarterPeriodList}
+                            dataLists={cashflowList} 
+                            dataNameList={cashflowNameList}
+                            unit={financialDataUnit}></PeriodicTable>
+                    <PeriodicTable 
+                            title='배당금'
+                            periodList={quarterPeriodList}
+                            dataLists={dividendList} 
+                            dataNameList={dividendNameList}
+                            unit={dividendUnit}></PeriodicTable> */}
                     <BarChart
                         title={'손익계산서'}
                         labelList={incomeNameList}
@@ -138,31 +166,11 @@ function StockPage() {
                         labelList={dividendNameList}
                         xdata={quarterPeriodList}
                         ydataList={dividendList}
-                        backgroundColorList={[colorGroup.oruumGreen]}
-                        borderColorList={[colorGroup.oruumGreen]}
-                        hoverBackgroundColorList={[colorGroup.hoverOruumGreen]}
-                        hoverBorderColorList={[colorGroup.hoverOruumGreen]}
+                        backgroundColorList={[colorGroup.lightGreen]}
+                        borderColorList={[colorGroup.lightGreen]}
+                        hoverBackgroundColorList={[colorGroup.hoverLightGreen]}
+                        hoverBorderColorList={[colorGroup.hoverLightGreen]}
                         unit={dividendUnit}></BarChart>
-                    {/* <PeriodicTable 
-                            title='대차대조표'
-                            periodList={quarterPeriodList}
-                            dataLists={balanceList} 
-                            dataNameList={balanceNameList}
-                            unit={financialDataUnit}></PeriodicTable>
-                    
-                    <PeriodicTable 
-                            title='현금흐름표'
-                            periodList={quarterPeriodList}
-                            dataLists={cashflowList} 
-                            dataNameList={cashflowNameList}
-                            unit={financialDataUnit}></PeriodicTable>
-                    <PeriodicTable 
-                            title='배당금'
-                            periodList={quarterPeriodList}
-                            dataLists={dividendList} 
-                            dataNameList={dividendNameList}
-                            unit={dividendUnit}></PeriodicTable> */}
-
                 </div>
             </div>
         </div>

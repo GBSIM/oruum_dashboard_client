@@ -18,7 +18,7 @@
 .menu {
     height: 50px;
     width: 100%;
-    background-color: #fff;
+    /* background-color: #fff; */
     /* margin-top: 10px; */
     display: flex;
     flex-direction: row;
@@ -33,7 +33,7 @@
 }
 
 .menu:hover {
-    background: #F8F8F8;
+    background: #FAFAFA;
 }
 
 .menu-image-container {
