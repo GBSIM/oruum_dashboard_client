@@ -19,7 +19,7 @@ function Search(props) {
     const searchStock = (event) => {
         event.preventDefault();
         dispatch(moveToStockPage());
-        navigate('/StockPage');
+        navigate('/Stock');
         dispatch(setStatus({ input }.input+'의 데이터를 찾고 있어요. 잠시만 기다려주세요!'));
         dispatch(getPrice({ input }.input,getPastDate(5),getCurrentDate()));
     };
