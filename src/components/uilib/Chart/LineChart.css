@@ -33,3 +33,9 @@
     color: #696969;
     font-weight: 500;
 }
+
+@media (max-width: 1024px) {
+    .period-picker-container {
+        display: none;
+    }
+}

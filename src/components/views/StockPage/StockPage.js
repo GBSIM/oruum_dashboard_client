@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 
 import './StockPage.css';
+import '../../../default.css';
 import NavBar from "../../uilib/NavBar/NavBar";
 import Header from "../../uilib/Header/Header";
 import Name from "../../uilib/Name/Name";
@@ -12,6 +13,7 @@ import PeriodicTable from "../../uilib/PeriodicTable/PeriodicTable";
 import Summary from "../../uilib/Summary/Summary";
 import BarChart from "../../uilib/Chart/BarChart";
 import StockLogo from "../../uilib/Logo/StockLogo";
+import BottomNavBar from "../../uilib/NavBar/BottomNavBar";
 import * as colorGroup from '../../../Color.js';
 
 function StockPage() {
@@ -71,7 +73,7 @@ function StockPage() {
             <div className='main-content'>
                 <Header>
                 </Header>
-                <div className='stock-page'>
+                <div className='main-contents'>
                     <div style={{"display":"flex","flexDirection":"row","alignItems":"center"}}>
                         <StockLogo></StockLogo>
                         <div>
@@ -87,11 +89,11 @@ function StockPage() {
                     
                     <TagBox tagList={tagList}></TagBox>
                     
-                    {/* <LineChart 
+                    <LineChart 
                         periodNameList={["1일","1주","1달","3달","6달","1년","2년","5년","10년","최대"]} 
                         periodState={plotPeriod}
                         xdata={{date}.date}
-                        ydata={{close}.close}></LineChart> */}
+                        ydata={{close}.close}></LineChart>
                     {/* <Summary 
                         titleList={summaryTitleList} 
                         valueList={summaryValueList} 
@@ -173,6 +175,7 @@ function StockPage() {
                         unit={dividendUnit}></BarChart> */}
                 </div>
             </div>
+            <BottomNavBar></BottomNavBar>
         </div>
     )
 }

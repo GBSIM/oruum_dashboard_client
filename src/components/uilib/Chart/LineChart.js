@@ -22,7 +22,7 @@ export default function LineChart(props) {
             <div className='period-picker-container'>
                 {periodButtonList}
             </div>
-            <Line
+            {/* <Line
                 className='stock-price-graph'
                 data={{
                     labels: xdata,
@@ -73,7 +73,7 @@ export default function LineChart(props) {
                             },
                         },
                     }}}
-                 />
+                 /> */}
         </div>
         
     )

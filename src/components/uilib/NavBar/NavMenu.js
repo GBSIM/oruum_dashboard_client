@@ -5,6 +5,7 @@ import { moveToDashboard } from '../../../_reducers/pager';
 import { moveToStockPage } from "../../../_reducers/pager";
 import { moveToEconomyPage } from "../../../_reducers/pager";
 import { moveToIndustryPage } from "../../../_reducers/pager";
+import { moveToPortfolioPage } from '../../../_reducers/pager';
 import { useNavigate } from 'react-router-dom';
 
 function NavMenu(props) {
@@ -62,7 +63,7 @@ function NavMenuTitle(props) {
     )
 }
 
-function Menu(props) {
+export function Menu(props) {
     // dispatch를 사용하기 위한 준비
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -71,14 +72,18 @@ function Menu(props) {
     // store에 있는 state 바꾸는 함수 실행
     if (props.menuName === "Stock") {
         dispatch(moveToStockPage());
-        navigate('/StockPage');
+        navigate('/Stock');
     } else if (props.menuName === "Economy") {
         dispatch(moveToEconomyPage());
-        navigate('/EconomyPage');
+        navigate('/Economy');
     } else if (props.menuName === "Industry") {
         dispatch(moveToIndustryPage());
-        navigate('/IndustryPage');
-    } else {
+        navigate('/Industry');
+    } else if (props.menuName==="Portfolio") {
+        dispatch(moveToPortfolioPage());
+        navigate('/Portfolio');
+    }
+    else {
         dispatch(moveToDashboard());
         navigate('/');
     }};

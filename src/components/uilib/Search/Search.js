@@ -29,7 +29,7 @@ function Search(props) {
     }
 
     return (
-        <form className='search-area' onSubmit={searchStock}>
+        <form className='search-container' onSubmit={searchStock}>
             <input type='text' placeholder='종목을 입력하세요!' className='search-input' onChange={typeTicker}></input>
             <button type='button' className='search-button' onClick={searchStock}>
                 <img src={require('./images/icon_search.png')} className='search-button-image'></img>

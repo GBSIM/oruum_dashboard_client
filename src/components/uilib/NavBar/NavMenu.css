@@ -34,6 +34,10 @@
 
 .menu:hover {
     /* background: #FAFAFA; */
+    color: rgba(150,150,150);
+}
+
+.menu.on:hover {
     color: #696969;
 }
 
@@ -52,19 +56,30 @@
     height: 1px;
     margin: 10px 20px 10px 20px;
     background: #DCDCDC;
+    z-index: 1;
 }
 
-@media (max-width: 1024px)  {
+@media (max-width: 1024px) {
+    .menu {
+        height: 50px;
+        width: 60px;
+        min-width: 60px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: #B9B9B9;
+    }
+    .menu-image-container {
+        height: 24px;
+        width: 24px;
+        margin: auto
+    }
     .menu-text {
         display: none;
     }
-    .menu {
-        width: 60px;
-    }
-    .menu:hover {
-        background: rgba(255,255,255,0.7);
-    }
-    .menu-image-container {
-        margin: auto;
+    .menu-grey-line {
+        height: 1px;
+        margin: 10px 10px 10px 10px;
+        background: #DCDCDC;
     }
 }

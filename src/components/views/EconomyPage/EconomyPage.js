@@ -1,6 +1,8 @@
 import './EconomyPage.css';
+import '../../../default.css';
 import NavBar from "../../uilib/NavBar/NavBar";
 import Header from "../../uilib/Header/Header";
+import BottomNavBar from '../../uilib/NavBar/BottomNavBar';
 
 function EconomyPage() {
     return (
@@ -8,10 +10,11 @@ function EconomyPage() {
             <NavBar></NavBar>
             <div className="main">
                 <Header></Header>
-                <div className='stock-page'>
+                <div className='main-contents'>
                     EconomyPage
                 </div>
             </div>
+            <BottomNavBar></BottomNavBar>
         </div>
     )
 }

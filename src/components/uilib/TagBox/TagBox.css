@@ -20,9 +20,3 @@
     margin-top: 20px;
 }
 
-@media (max-width: 1024px) {
-    .tag {
-        font-size: 14px;
-    }
-}
-

@@ -1,11 +1,10 @@
 .nav-bar {
     position: sticky;
-    top: 0;
+    top: 0px;
     width: 250px;
     min-width: 250px;
     height: 100vh;
-    background: #F5F5F4;
-    /* border-right: 1px solid #DCDCDC; */
+    border-right: 1px solid #DCDCDC;
 }
 
 .logo-container {
@@ -19,9 +18,14 @@
         width: 60px;
         min-width: 60px;
     }
-
     .logo-container {
         display: none;
-        width: 0;
+        width: 0px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-bar {
+        display: none;
     }
 }

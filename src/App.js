@@ -12,6 +12,7 @@ import LandingPage from './components/views/LandingPage/LandingPage';
 import StockPage from './components/views/StockPage/StockPage';
 import EconomyPage from './components/views/EconomyPage/EconomyPage';
 import IndustryPage from './components/views/IndustryPage/IndustryPage';
+import PortfolioPage from './components/views/PortfolioPage/PortfolioPage';
 import { getPrice } from './_reducers/stock';
 import { setStatus } from './_reducers/stock';
 import { getCurrentDate, getPastDate } from './components/fnclib/DateProcessing';
@@ -29,9 +30,10 @@ function App() {
       <div>
         <Routes>  
           <Route exact path="/" element={<LandingPage />} />
-          <Route exact path="/StockPage" element={<StockPage />} />
-          <Route exact path="/EconomyPage" element={<EconomyPage />} />
-          <Route exact path="/IndustryPage" element={<IndustryPage />} />
+          <Route exact path="/Stock" element={<StockPage />} />
+          <Route exact path="/Economy" element={<EconomyPage />} />
+          <Route exact path="/Industry" element={<IndustryPage />} />
+          <Route exact path="/Portfolio" element={<PortfolioPage />} />
         </Routes>
       </div>
     </Router>
