@@ -9,6 +9,7 @@
     bottom: 0px;
     align-items: center;
     justify-content: space-around;
+    background: white;
 }
 
 @media (max-width: 600px) {

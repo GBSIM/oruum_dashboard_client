@@ -9,3 +9,9 @@
     display: flex;
     flex-direction: row;
 }
+
+@media (max-width: 1024px) {
+    .check-box-container {
+        flex-direction: column;
+    }
+}

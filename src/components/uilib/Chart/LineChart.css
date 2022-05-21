@@ -1,6 +1,10 @@
-.line-chart-canvas {
+.line-chart-container {
     margin-top: 20px;
+}
+
+.line-chart-canvas {
     flex-shrink: 1;
+    height: 300px;
 }
 
 .period-picker-container {
@@ -32,6 +36,11 @@
     background: #F8F8F8;
     color: #696969;
     font-weight: 500;
+}
+
+.line-chart {
+    width: 100%;
+    flex-grow: 1;
 }
 
 @media (max-width: 1024px) {
