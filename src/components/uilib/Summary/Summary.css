@@ -48,3 +48,9 @@
     font-size: 1rem;
     color: #696969;
 }
+
+@media (max-width: 1024px) {
+    .summary-container {
+        display: none;
+    }
+}

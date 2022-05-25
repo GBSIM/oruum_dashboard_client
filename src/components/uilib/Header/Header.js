@@ -8,8 +8,8 @@ function Header() {
         <div className="header">
             <Search></Search>
             <div style={{flexGrow:"1"}}></div>
-            {/* <AccountProfile></AccountProfile>
-            <AccountButton></AccountButton> */}
+            <AccountProfile></AccountProfile>
+            <AccountButton></AccountButton>
         </div>
     )
 }

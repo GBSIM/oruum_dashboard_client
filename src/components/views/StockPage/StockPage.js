@@ -94,10 +94,10 @@ function StockPage() {
                         periodState={plotPeriod}
                         xdata={{date}.date}
                         ydata={{close}.close}></LineChart>
-                    {/* <Summary 
+                    <Summary 
                         titleList={summaryTitleList} 
                         valueList={summaryValueList} 
-                        numberRows = {3}></Summary> */}
+                        numberRows = {3}></Summary>
                     <div className='check-box-container'>
                         <CheckPointBox 
                             headerText={{ticker}.ticker+', 매수하자!'} 

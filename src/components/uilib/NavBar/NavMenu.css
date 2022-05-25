@@ -28,7 +28,7 @@
 
 .menu.on {
     /* background: #F8F8F8; */
-    color: #696969;
+    color: #333333;
     font-weight: 500;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .menu.on:hover {
-    color: #696969;
+    color: #333333;
 }
 
 .menu-image-container {

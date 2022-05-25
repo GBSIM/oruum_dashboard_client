@@ -1,11 +1,7 @@
 import '../../../default.css';
 import './NavMenu.css';
 import { useSelector, useDispatch } from "react-redux";
-import { moveToDashboard } from '../../../_reducers/pager';
-import { moveToStockPage } from "../../../_reducers/pager";
-import { moveToEconomyPage } from "../../../_reducers/pager";
-import { moveToIndustryPage } from "../../../_reducers/pager";
-import { moveToPortfolioPage } from '../../../_reducers/pager';
+import { moveToDashboard, moveToStockPage, moveToEconomyPage, moveToIndustryPage, moveToPortfolioPage, moveToSimulationPage} from '../../../_reducers/pager';
 import { useNavigate } from 'react-router-dom';
 
 function NavMenu(props) {
@@ -82,6 +78,9 @@ export function Menu(props) {
     } else if (props.menuName==="Portfolio") {
         dispatch(moveToPortfolioPage());
         navigate('/Portfolio');
+    } else if (props.menuName==="Simulation") {
+        dispatch(moveToSimulationPage());
+        navigate('/Simulation');
     }
     else {
         dispatch(moveToDashboard());
