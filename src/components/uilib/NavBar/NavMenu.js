@@ -85,7 +85,9 @@ export function Menu(props) {
     else {
         dispatch(moveToDashboard());
         navigate('/');
-    }};
+    }
+    window.scrollTo(0,0);
+    };
 
     const onImage = <img src={props.onImage} alt='on' className='menu-image-container'></img>
     const offImage = <img src={props.offImage} alt='off' className='menu-image-container'></img>
