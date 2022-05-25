@@ -12,18 +12,21 @@ import CheckPointBox from "../../uilib/CheckPointBox/CheckPointBox";
 import Summary from "../../uilib/Summary/Summary";
 import StockLogo from "../../uilib/Logo/StockLogo";
 import BottomNavBar from "../../uilib/NavBar/BottomNavBar";
+import IndicatorBox from "../../uilib/IndicatorBox/IndicatorBox";
 
 function StockPage() {
-    const { name, ticker } = useSelector(state => state.stock);
-
-    const { date, close } = useSelector(state => state.stock);
-
-    const { plotPeriod, tagList} = useSelector(state => state.stock);
-
-    const { currency, currentPrice, lastChange, lastChangeRate, lastChangeSign } = useSelector(state => state.stock);
-
-    const {lastOpen, lastHigh, lastLow, lastVolume, forwardPER, capability, yearlyHigh, yearlyLow,
-           fallingRatio, EPS, ttmPER, ttmPSR} = useSelector(state => state.stock);
+    const {name, ticker, currency, capability} = useSelector(state => state.stock);
+    const {date, close, plotPeriod, 
+           currentPrice, lastChange, lastChangeRate, lastChangeSign,
+           lastOpen, lastHigh, lastLow, lastVolume,
+           yearlyHigh, yearlyLow,fallingRatio } = useSelector(state => state.stock);
+    const {tagList,checkListBuy, checkListSell} = useSelector(state => state.stock);
+    const {forwardPER, ttmPER, ttmPSR,
+           currentGrossMargin,currentOperatingMargin,currentNetProfitMargin,
+           ttmSalesGrowth,ttmOperatingIncomeGrowth,ttmNetProfitGrowth,
+           currentDebtRatio,currentQuickRatio,currentCurrentRatio,
+           ttmAssetTurnover,ttmInventoryTurnover,ttmReceivableTurnover} =  useSelector(state => state.stock);
+    const {EPS} = useSelector(state=>state.stock);
 
     const summaryTitleList = ["시작가","최고가","최저가",
                               "거래량","f/w PER","시가총액",
@@ -33,8 +36,14 @@ function StockPage() {
                               lastVolume, forwardPER, capability, 
                               yearlyHigh, yearlyLow, fallingRatio,
                               EPS, ttmPER, ttmPSR];
-    
-    const { checkListBuy, checkListSell } = useSelector(state => state.stock);
+    const marginTitleList = ["매출총이익률","영업이익률","순이익률"];
+    const marginValueList = [currentGrossMargin,currentOperatingMargin,currentNetProfitMargin];
+    const growthTitleList = ["매출액 성장률","영업이익 성장률","순이익 성장률"];
+    const growthValueList = [ttmSalesGrowth,ttmOperatingIncomeGrowth,ttmNetProfitGrowth];
+    const stabilityTitleList = ["부채비율","유동비율","당좌비율"];
+    const stabilityValueList = [currentDebtRatio,currentQuickRatio,currentCurrentRatio];
+    const activityTitleList = ["재고자산 회전율","매출채권 회전율","자산 회전율"];
+    const activityValueList = [ttmInventoryTurnover,ttmReceivableTurnover,ttmAssetTurnover];
 
     return (
         <div className='page'>
@@ -54,10 +63,7 @@ function StockPage() {
                                 lastChangeSign={lastChangeSign}></PriceBox>
                         </div>
                     </div>
-                    
-                    
                     <TagBox tagList={tagList}></TagBox>
-                    
                     <LineChart 
                         periodNameList={["1일","1주","1달","3달","6달","1년","2년","5년","10년","최대"]} 
                         periodState={plotPeriod}
@@ -78,6 +84,36 @@ function StockPage() {
                             image={require('./images/icon_down.png')}></CheckPointBox>
                     </div>
                     <div className="stock-page-horizontal-grey-line"></div>
+                    <div className="stock-ratio-box-container-group">
+                        <div className="stock-ratio-box-container">
+                            <IndicatorBox
+                                image={require('./images/icon_profit.png')}
+                                title="수익성"
+                                indicatorTitleList={marginTitleList}
+                                indicatorValueList={marginValueList}></IndicatorBox>
+                            <div className="stock-page-vertical-grey-line"></div>
+                            <IndicatorBox
+                                image={require('./images/icon_growth.png')}
+                                title="성장성"
+                                indicatorTitleList={growthTitleList}
+                                indicatorValueList={growthValueList}></IndicatorBox>
+                        </div>
+                        <div className="stock-ratio-box-divider"></div>
+                        <div className="stock-ratio-box-container">
+                            <IndicatorBox
+                                image={require('./images/icon_stability.png')}
+                                title="안정성"
+                                indicatorTitleList={stabilityTitleList}
+                                indicatorValueList={stabilityValueList}></IndicatorBox>
+                            <div className="stock-page-vertical-grey-line"></div>
+                            <IndicatorBox
+                                image={require('./images/icon_return.png')}
+                                title="활동성"
+                                indicatorTitleList={activityTitleList}
+                                indicatorValueList={activityValueList}></IndicatorBox>
+                        </div>
+                    </div>
+                    <div className="stock-page-horizontal-grey-line" style={{"marginTop":"0px"}}></div>
                 </div>
             </div>
             <BottomNavBar></BottomNavBar>

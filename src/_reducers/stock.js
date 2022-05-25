@@ -9,60 +9,59 @@ export const SEARCHSTATUS = "STOCK/SEARCHSTATUS";
 const initialState = {
   input: "AAPL",
 
+  // basic information
   name: "종목이름",
   ticker: "",
   status: "",
+  capability: "2.1T",
+  currency: "$",
 
+  // price and volume
   close: "",
   open: "",
   high: "",
   low: "",
   date: "",
   plotPeriod: "5년",
-
-  currentPrice: "140.2",
-  lastOpen: "140",
-  lastHigh: "150",
-  lastLow: "130",
-  lastChange: "2.0",
-  lastChangeRate: "1.07",
+  currentPrice: 140.2,
+  lastOpen: 140,
+  lastHigh: 150,
+  lastLow: 130,
+  lastChange: 2.0,
+  lastChangeRate: 1.07,
   lastChangeSign: true,
-  lastVolume: "10000",
-  forwardPER: "30.0",
-  capability: "2.1T",
-  yearlyHigh: "180.0",
-  yearlyLow: "130.0",
-  fallingRatio: "-20.5",
-  EPS: "7.8",
-  ttmPER: "34.1",
-  ttmPSR: "7.1",
-  currency: "$",
+  lastVolume: 10000,
+  yearlyHigh: 180.0,
+  yearlyLow: 130.0,
+  fallingRatio: -20.5,
 
-  tagList: ['태그 1','태그 2','태그 3','태그 4'],
+  // financial ratio
+  forwardPER: 30.0,
+  ttmPER: 34.1,
+  ttmPSR: 7.1,
+  currentGrossMargin: 30.0,
+  currentOperatingMargin: 30.0,
+  currentNetProfitMargin: 30.0,
+  ttmSalesGrowth: 30.0,
+  ttmOperatingIncomeGrowth: 30.0,
+  ttmNetProfitGrowth: 30.0,
+  currentDebtRatio: 30.0,
+  currentQuickRatio: 30.0,
+  currentCurrentRatio: 30.0,
+  ttmAssetTurnover: 30.0,
+  ttmInventoryTurnover: 30.0,
+  ttmReceivableTurnover: 30.0,
+
+  // financial information
+  EPS: 7.8,
   
+
+  
+  
+  // oruum contents
+  tagList: ['태그 1','태그 2','태그 3','태그 4'],
   checkListBuy: ['매수 체크리스트1','매수 체크리스트2','매수 체크리스트3'],
   checkListSell: ['매도 체크리스트1','매도 체크리스트2','매도 체크리스트3'],
-  
-  financialDataUnit: "백만달러",
-  quarterPeriodList: ["2019.12","2020.03","2020.06","2020.09","2020.12","2021.03","2021.06","2021.09","2021.12","2022.03",],
-  quarterRevenueList: [10000,10000,10000,10000,10000,10000,10000,10000,10000,10000,],
-  quarterGrossProfitList: [5000,5000,5000,5000,5000,5000,5000,5000,5000,5000,],
-  quarterOperatingIncomeList: [3000,3000,3000,3000,3000,3000,3000,3000,3000,3000,],
-  quarterNetIncomeList: [2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,],
-
-  quarterAssetList: [10000,10000,10000,10000,10000,10000,10000,10000,10000,10000,],
-  quarterLiabilitiesList: [3000,3000,3000,3000,3000,3000,3000,3000,3000,3000,],
-  quarterEquityList: [7000,7000,7000,7000,7000,7000,7000,7000,7000,7000,],
-  quarterCurrentAssetList: [3000,3000,3000,3000,3000,3000,3000,3000,3000,3000,],
-  quarterCurrentLiabilitiesList: [1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,],
-
-  quarterOperatingCashFlowList: [2500,2500,2500,2500,2500,2500,2500,2500,2500,2500,],
-  quarterInvestingCashFlowList: [1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,],
-  quarterFinancingCashFlowList: [-500,-500,-500,-500,-500,-500,-500,-500,-500,-500,],
-  quarterNetChangeCashFlowList: [500,500,500,500,500,500,500,500,500,500,],
-
-  quarterDividendList: [0.1925,0.205,0.205,0.205,0.205,0.22,0.22,0.22,0.22,0.23,],
-  dividendUnit: "달러",
 };
 
 export async function getPrice(tickerInput, startDate, endDate) {
