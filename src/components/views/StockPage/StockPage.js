@@ -13,6 +13,7 @@ import Summary from "../../uilib/Summary/Summary";
 import StockLogo from "../../uilib/Logo/StockLogo";
 import BottomNavBar from "../../uilib/NavBar/BottomNavBar";
 import IndicatorBox from "../../uilib/IndicatorBox/IndicatorBox";
+import ProductTable from "../../uilib/ProductTable/ProductTable";
 
 function StockPage() {
     const {name, ticker, currency, capability} = useSelector(state => state.stock);
@@ -20,7 +21,8 @@ function StockPage() {
            currentPrice, lastChange, lastChangeRate, lastChangeSign,
            lastOpen, lastHigh, lastLow, lastVolume,
            yearlyHigh, yearlyLow,fallingRatio } = useSelector(state => state.stock);
-    const {tagList,checkListBuy, checkListSell} = useSelector(state => state.stock);
+    const {tagList,checkListBuy, checkListSell,
+           productList,productSalesRatioList,productGrowthList,productTagLists} = useSelector(state => state.stock);
     const {forwardPER, ttmPER, ttmPSR,
            currentGrossMargin,currentOperatingMargin,currentNetProfitMargin,
            ttmSalesGrowth,ttmOperatingIncomeGrowth,ttmNetProfitGrowth,
@@ -63,7 +65,9 @@ function StockPage() {
                                 lastChangeSign={lastChangeSign}></PriceBox>
                         </div>
                     </div>
-                    <TagBox tagList={tagList}></TagBox>
+                    <div style={{'marginTop':'20px'}}>
+                        <TagBox tagList={tagList}></TagBox>
+                    </div>
                     <LineChart 
                         periodNameList={["1일","1주","1달","3달","6달","1년","2년","5년","10년","최대"]} 
                         periodState={plotPeriod}
@@ -114,6 +118,12 @@ function StockPage() {
                         </div>
                     </div>
                     <div className="stock-page-horizontal-grey-line" style={{"marginTop":"0px"}}></div>
+                    <ProductTable
+                        title={{name}.name+'은 어떤 제품을 파나요?'}
+                        productList={productList}
+                        salesRatioList={productSalesRatioList}
+                        growthList={productGrowthList}
+                        tagLists={productTagLists}></ProductTable>
                 </div>
             </div>
             <BottomNavBar></BottomNavBar>

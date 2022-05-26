@@ -55,13 +55,14 @@ const initialState = {
   // financial information
   EPS: 7.8,
   
-
-  
-  
   // oruum contents
   tagList: ['태그 1','태그 2','태그 3','태그 4'],
   checkListBuy: ['매수 체크리스트1','매수 체크리스트2','매수 체크리스트3'],
   checkListSell: ['매도 체크리스트1','매도 체크리스트2','매도 체크리스트3'],
+  productList: ['아이폰', '아이패드', '맥'],
+  productSalesRatioList: [50.0, 30.0, 20.0],
+  productGrowthList: [20,20,20],
+  productTagLists: [['전자제품','IT'],['전자제품','IT'],['전자제품','IT']]
 };
 
 export async function getPrice(tickerInput, startDate, endDate) {
