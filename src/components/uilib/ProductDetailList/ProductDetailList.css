@@ -42,6 +42,11 @@
 .product-detail-contents-icon-container {
     height: 30px;
     width: 30px;
+    min-width: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .product-detail-contents-icon {

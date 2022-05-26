@@ -68,3 +68,9 @@
         height: 30px;
     }
 }
+
+@media (max-width: 600px) {
+    .indicator-value {
+        font-size: 24px;
+    }
+}
