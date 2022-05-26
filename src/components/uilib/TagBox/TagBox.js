@@ -7,7 +7,7 @@ export default function TagBox(props) {
         <div className='tag-box'>
             {TagList}
             <button className='tag-add-button'>
-                <img className='tag-add-button-image' src={require('./images/add_button.png')} alt='logo name'></img>
+                +
             </button>
         </div>
     )    
