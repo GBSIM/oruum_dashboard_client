@@ -59,10 +59,12 @@ const initialState = {
   tagList: ['태그 1','태그 2','태그 3','태그 4'],
   checkListBuy: ['매수 체크리스트1','매수 체크리스트2','매수 체크리스트3'],
   checkListSell: ['매도 체크리스트1','매도 체크리스트2','매도 체크리스트3'],
-  productList: ['아이폰', '아이패드', '맥'],
-  productSalesRatioList: [50.0, 30.0, 20.0],
-  productGrowthList: [20,20,20],
-  productTagLists: [['전자제품','IT'],['전자제품','IT'],['전자제품','IT']]
+  productList: ['아이폰', '아이패드'],
+  productSalesRatioList: [50.0, 30.0],
+  productGrowthList: [20,20],
+  productTagLists: [['전자제품','IT'],['전자제품','IT'],],
+  productSummaryList: ['아이폰, 애플 매출의 핵심!',''],
+  productDetailLists: [['전세계 $450B의 스마트폰 시장에서 애플은 무려 %196B 차지! (43.6%)','2021년 4분기 스마트폰 출하량 22%로 1위!',['점점 더 커지는 프리미엄 스마트폰 시장, 그리고 애플의 프리미엄폰 시장에서의 확고한 위치!']],[]],
 };
 
 export async function getPrice(tickerInput, startDate, endDate) {

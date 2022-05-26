@@ -1,4 +1,5 @@
 import './TagBox.css';
+import ContentsAddButton from '../ContentsAddButton/ContentsAddButton';
 
 export default function TagBox(props) {
     const TagList = props.tagList.map((tag,index) => (<TagUnit key={index} tagName={tag}></TagUnit>));
@@ -6,9 +7,7 @@ export default function TagBox(props) {
     return (
         <div className='tag-box'>
             {TagList}
-            <button className='tag-add-button'>
-                +
-            </button>
+            <ContentsAddButton></ContentsAddButton>
         </div>
     )    
 }

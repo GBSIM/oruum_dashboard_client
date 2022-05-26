@@ -14,6 +14,7 @@ import StockLogo from "../../uilib/Logo/StockLogo";
 import BottomNavBar from "../../uilib/NavBar/BottomNavBar";
 import IndicatorBox from "../../uilib/IndicatorBox/IndicatorBox";
 import ProductTable from "../../uilib/ProductTable/ProductTable";
+import ProductDetailList from "../../uilib/ProductDetailList/ProductDetailList";
 
 function StockPage() {
     const {name, ticker, currency, capability} = useSelector(state => state.stock);
@@ -22,7 +23,7 @@ function StockPage() {
            lastOpen, lastHigh, lastLow, lastVolume,
            yearlyHigh, yearlyLow,fallingRatio } = useSelector(state => state.stock);
     const {tagList,checkListBuy, checkListSell,
-           productList,productSalesRatioList,productGrowthList,productTagLists} = useSelector(state => state.stock);
+           productList,productSalesRatioList,productGrowthList,productTagLists,productSummaryList,productDetailLists} = useSelector(state => state.stock);
     const {forwardPER, ttmPER, ttmPSR,
            currentGrossMargin,currentOperatingMargin,currentNetProfitMargin,
            ttmSalesGrowth,ttmOperatingIncomeGrowth,ttmNetProfitGrowth,
@@ -118,12 +119,22 @@ function StockPage() {
                         </div>
                     </div>
                     <div className="stock-page-horizontal-grey-line" style={{"marginTop":"0px"}}></div>
-                    <ProductTable
-                        title={{name}.name+'은 어떤 제품을 파나요?'}
-                        productList={productList}
-                        salesRatioList={productSalesRatioList}
-                        growthList={productGrowthList}
-                        tagLists={productTagLists}></ProductTable>
+                    <div>
+                        <ProductTable
+                            title={{name}.name+', 어떤 제품을 파나요?'}
+                            productList={productList}
+                            salesRatioList={productSalesRatioList}
+                            growthList={productGrowthList}
+                            tagLists={productTagLists}></ProductTable>
+                    </div>
+                    <div style={{'marginTop':'30px'}}>
+                        <ProductDetailList
+                            title={{name}.name+'의 제품에 대해 자세히 알고 싶어요!'}
+                            productList={productList}
+                            productSummaryList={productSummaryList}
+                            productDetailLists={productDetailLists}></ProductDetailList>
+                    </div>
+                    <div className="stock-page-horizontal-grey-line" style={{"marginTop":"0px"}}></div>
                 </div>
             </div>
             <BottomNavBar></BottomNavBar>

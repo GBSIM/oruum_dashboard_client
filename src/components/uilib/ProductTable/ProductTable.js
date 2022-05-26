@@ -1,6 +1,7 @@
 import './ProductTable.css';
 import ContentsTitle from '../ContentsTitle/ContentsTitle';
 import TagBox from '../TagBox/TagBox';
+import ContentsAddButton from '../ContentsAddButton/ContentsAddButton';
 
 export default function ProductTable(props) {
     const TableRows = props.productList.map((product,index) => 
@@ -16,6 +17,7 @@ export default function ProductTable(props) {
             <ContentsTitle title={props.title}></ContentsTitle>
             <TableHeader></TableHeader>
             {TableRows}
+            <ContentsAddButton buttonText='새로운 제품 추가하기'></ContentsAddButton>
         </div>
     )
 }
