@@ -182,7 +182,7 @@ export default function StockPage() {
                             targetPriceLow={targetPriceLow}
                             currentPrice={currentPrice}></TargetPriceBox>
                     </div>
-                    
+                    <div className="stock-page-horizontal-grey-line" style={{"marginTop":"40px"}}></div>
                 </div>
             </div>
             <BottomNavBar></BottomNavBar>

@@ -27,31 +27,22 @@
 }
 
 .opinion-table-contents.opinion {
-    width: 160px;
-    min-width: 160px;
+    width: 120px;
     flex: 1;
 }
 
 .opinion-table-contents.number {
-    width: 160px;
-    min-width: 160px;
+    width: 120px;
     flex: 1;
 }
 
 .opinion-table-contents.ratio {
-    width: 160px;
-    min-width: 160px;
+    width: 120px;
     flex: 1;
 }
 
 @media (max-width: 600px) {
     .opinion-table-contents {
         font-size: 16px;
-    }
-    .opinion-table-contents.number {
-        min-width: 100px;
-    }
-    .opinion-table-contents.ratio {
-        min-width: 120px;
     }
 }
