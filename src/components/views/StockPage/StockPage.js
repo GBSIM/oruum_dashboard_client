@@ -15,6 +15,8 @@ import BottomNavBar from "../../uilib/NavBar/BottomNavBar";
 import IndicatorBox from "../../uilib/IndicatorBox/IndicatorBox";
 import ProductTable from "../../uilib/ProductTable/ProductTable";
 import ProductDetailList from "../../uilib/ProductDetailList/ProductDetailList";
+import BarChart from "../../uilib/Chart/BarChart";
+import ContentsTitle from "../../uilib/ContentsTitle/ContentsTitle";
 
 function StockPage() {
     const {name, ticker, currency, capability} = useSelector(state => state.stock);
@@ -29,7 +31,7 @@ function StockPage() {
            ttmSalesGrowth,ttmOperatingIncomeGrowth,ttmNetProfitGrowth,
            currentDebtRatio,currentQuickRatio,currentCurrentRatio,
            ttmAssetTurnover,ttmInventoryTurnover,ttmReceivableTurnover} =  useSelector(state => state.stock);
-    const {EPS} = useSelector(state=>state.stock);
+    const {EPS,incomeYearList,revenueList,operatingincomeList,netProfitList} = useSelector(state=>state.stock);
 
     const summaryTitleList = ["시작가","최고가","최저가",
                               "거래량","f/w PER","시가총액",
@@ -135,6 +137,36 @@ function StockPage() {
                             productDetailLists={productDetailLists}></ProductDetailList>
                     </div>
                     <div className="stock-page-horizontal-grey-line" style={{"marginTop":"0px"}}></div>
+                    <div>
+                        <div style={{'marginBottom':'0px'}}>
+                            <ContentsTitle title='매출과 영업이익은 성장하고 있나요?'></ContentsTitle>
+                        </div>
+                        <div className="bar-chart-list-container">
+                            <BarChart
+                                barChartTitle='매출'
+                                valueList={revenueList}
+                                labelList={incomeYearList}
+                                posColor={'#9AD8CD'}
+                                negColor={'#F15E5E'}></BarChart>
+                            <div className="stock-page-bar-chart-divider"></div>
+                            <BarChart
+                                barChartTitle='영업이익'
+                                valueList={operatingincomeList}
+                                labelList={incomeYearList}
+                                posColor={'#34B199'}
+                                negColor={'#F15E5E'}></BarChart>
+                            <div className="stock-page-bar-chart-divider"></div>
+                            <BarChart
+                                barChartTitle='순이익'
+                                valueList={netProfitList}
+                                labelList={incomeYearList}
+                                posColor={'#074B3F'}
+                                negColor={'#F15E5E'}></BarChart>
+                        </div>
+                    </div>
+                    <div className="stock-page-horizontal-grey-line" style={{"marginTop":"30px"}}></div>
+                    
+                    
                 </div>
             </div>
             <BottomNavBar></BottomNavBar>

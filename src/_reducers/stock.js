@@ -54,6 +54,10 @@ const initialState = {
 
   // financial information
   EPS: 7.8,
+  incomeYearList: ['2018','2019','2020','2021','2022(E)'],
+  revenueList: [20,40,60,100,150],
+  operatingincomeList: [-50,-30,-20,60,100],
+  netProfitList: [-50,-40,-10,50,80],
   
   // oruum contents
   tagList: ['태그 1','태그 2','태그 3','태그 4'],

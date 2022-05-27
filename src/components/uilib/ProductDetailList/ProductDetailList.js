@@ -12,7 +12,9 @@ export default function ProductDetailList(props) {
 
     return (
         <div className='product-detail-list-container'>
-            <ContentsTitle title={props.title}></ContentsTitle>
+            <div style={{'marginBottom':'10px'}}>
+                <ContentsTitle title={props.title}></ContentsTitle>
+            </div>
             {ProductDetailList}
         </div>
     )

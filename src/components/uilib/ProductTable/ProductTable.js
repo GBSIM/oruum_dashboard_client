@@ -14,7 +14,9 @@ export default function ProductTable(props) {
 
     return (
         <div className='product-table-container'>
-            <ContentsTitle title={props.title}></ContentsTitle>
+            <div style={{'marginBottom':'10px'}}>
+                <ContentsTitle title={props.title}></ContentsTitle> 
+            </div>
             <TableHeader></TableHeader>
             {TableRows}
             <ContentsAddButton buttonText='새로운 제품 추가하기'></ContentsAddButton>
