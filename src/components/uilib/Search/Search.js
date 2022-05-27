@@ -20,7 +20,8 @@ function Search(props) {
         event.preventDefault();
         dispatch(moveToStockPage());
         navigate('/Stock');
-        dispatch(setStatus({ input }.input+'의 데이터를 찾고 있어요. 잠시만 기다려주세요!'));
+        // dispatch(setStatus({ input }.input+'의 데이터를 찾고 있어요. 잠시만 기다려주세요!'));
+        dispatch(setStatus('검색 중'));
         dispatch(getPrice({ input }.input,getPastDate(5),getCurrentDate()));
     };
 
@@ -28,8 +29,22 @@ function Search(props) {
         dispatch(setInput(event.currentTarget.value.toUpperCase()))
     }
 
-    return (
-        <form className='search-container' onSubmit={searchStock}>
+    if (status === '검색 중') {
+        return (
+            <form className='search-container' onSubmit={searchStock}>
+                <input type='text' placeholder='종목을 입력하세요!' className='search-input' onChange={typeTicker}></input>
+                <button type='button' className='search-button' onClick={searchStock}>
+                    <img src={require('./images/icon_search.png')} className='search-button-image'></img>
+                </button>
+                <div class="loader"></div>
+                {/* <span className='search-result'>
+                    { status }
+                </span> */}
+            </form>
+        )
+    } else {
+        return (
+            <form className='search-container' onSubmit={searchStock}>
             <input type='text' placeholder='종목을 입력하세요!' className='search-input' onChange={typeTicker}></input>
             <button type='button' className='search-button' onClick={searchStock}>
                 <img src={require('./images/icon_search.png')} className='search-button-image'></img>
@@ -38,7 +53,8 @@ function Search(props) {
                 { status }
             </span>
         </form>
-    )
+        )
+    }
 }
 
 export default Search;

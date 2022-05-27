@@ -89,7 +89,7 @@ export async function getPrice(tickerInput, startDate, endDate) {
 
     let result = "none";
     if (request.close.length > 1) {
-      result = tickerInput + "의 데이터 수집을 완료했어요.";
+      result = "완료"
       return {
         type: SEARCHSUCCESS,
         response: request,
@@ -97,7 +97,7 @@ export async function getPrice(tickerInput, startDate, endDate) {
         ticker: tickerInput
     }    
     } else {
-      result = tickerInput + "의 데이터를 수집하는 데 실패했어요.";
+      result = "실패"
       return {
         type: SEARCHFAIL,
         response: request,
