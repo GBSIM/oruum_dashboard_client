@@ -53,4 +53,10 @@
     .product-table-contents {
         font-size: 16px;
     }
+    .product-table-contents.sales-ratio {
+        min-width: 100px;
+    }
+    .product-table-contents.growth {
+        min-width: 120px;
+    }
 }

@@ -18,7 +18,7 @@ import ProductDetailList from "../../uilib/ProductDetailList/ProductDetailList";
 import BarChart from "../../uilib/Chart/BarChart";
 import ContentsTitle from "../../uilib/ContentsTitle/ContentsTitle";
 
-function StockPage() {
+export default function StockPage() {
     const {name, ticker, currency, capability} = useSelector(state => state.stock);
     const {date, close, plotPeriod, 
            currentPrice, lastChange, lastChangeRate, lastChangeSign,
@@ -173,5 +173,3 @@ function StockPage() {
         </div>
     )
 }
-
-export default StockPage;
