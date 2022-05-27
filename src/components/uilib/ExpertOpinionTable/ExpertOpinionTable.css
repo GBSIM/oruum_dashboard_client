@@ -1,0 +1,57 @@
+.opinion-table-container {
+    flex:1;
+}
+
+.opinion-table-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #DCDCDC;
+    flex: 1;
+}
+
+.opinion-table-row.header {
+    border-bottom: 2px solid #DCDCDC;
+    z-index: 0;
+}
+
+.opinion-table-contents {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: #696969;
+    font-size: 20px;
+}
+
+.opinion-table-contents.opinion {
+    width: 160px;
+    min-width: 160px;
+    flex: 1;
+}
+
+.opinion-table-contents.number {
+    width: 160px;
+    min-width: 160px;
+    flex: 1;
+}
+
+.opinion-table-contents.ratio {
+    width: 160px;
+    min-width: 160px;
+    flex: 1;
+}
+
+@media (max-width: 600px) {
+    .opinion-table-contents {
+        font-size: 16px;
+    }
+    .opinion-table-contents.number {
+        min-width: 100px;
+    }
+    .opinion-table-contents.ratio {
+        min-width: 120px;
+    }
+}

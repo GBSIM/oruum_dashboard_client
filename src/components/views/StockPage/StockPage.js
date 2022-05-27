@@ -17,6 +17,8 @@ import ProductTable from "../../uilib/ProductTable/ProductTable";
 import ProductDetailList from "../../uilib/ProductDetailList/ProductDetailList";
 import BarChart from "../../uilib/Chart/BarChart";
 import ContentsTitle from "../../uilib/ContentsTitle/ContentsTitle";
+import ExpertOpniionTable from "../../uilib/ExpertOpinionTable/ExpertOpinionTable";
+import TargetPriceBox from "../../uilib/TargetPriceBox/TargetPriceBox";
 
 export default function StockPage() {
     const {name, ticker, currency, capability} = useSelector(state => state.stock);
@@ -32,6 +34,7 @@ export default function StockPage() {
            currentDebtRatio,currentQuickRatio,currentCurrentRatio,
            ttmAssetTurnover,ttmInventoryTurnover,ttmReceivableTurnover} =  useSelector(state => state.stock);
     const {EPS,incomeYearList,revenueList,operatingincomeList,netProfitList} = useSelector(state=>state.stock);
+    const {opinionList, opinionNumberList,targetPriceHigh,targetPriceAvg,targetPriceLow} = useSelector(state=>(state.stock));
 
     const summaryTitleList = ["시작가","최고가","최저가",
                               "거래량","f/w PER","시가총액",
@@ -165,7 +168,20 @@ export default function StockPage() {
                         </div>
                     </div>
                     <div className="stock-page-horizontal-grey-line" style={{"marginTop":"30px"}}></div>
-                    
+                    <div>
+                        <ContentsTitle title='증권사 전문가들은 어떻게 예측하고 있을까?'></ContentsTitle>
+                    </div>
+                    <div className="stock-page-expert-opinion-container">
+                        <ExpertOpniionTable
+                            opinionList={opinionList}
+                            numberList={opinionNumberList}></ExpertOpniionTable>
+                        <TargetPriceBox
+                            currency={currency}
+                            targetPriceHigh={targetPriceHigh}
+                            targetPriceAvg={targetPriceAvg}
+                            targetPriceLow={targetPriceLow}
+                            currentPrice={currentPrice}></TargetPriceBox>
+                    </div>
                     
                 </div>
             </div>

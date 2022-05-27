@@ -58,6 +58,13 @@ const initialState = {
   revenueList: [20,40,60,100,150],
   operatingincomeList: [-50,-30,-20,60,100],
   netProfitList: [-50,-40,-10,50,80],
+
+  // Expert opinion
+  opinionList: ['강력 매수','매수','중립','매도','강력 매도'],
+  opinionNumberList: [10,10,10,10,10],
+  targetPriceHigh: 225,
+  targetPriceAvg: 193.5,
+  targetPriceLow: 160,
   
   // oruum contents
   tagList: ['태그 1','태그 2','태그 3','태그 4'],

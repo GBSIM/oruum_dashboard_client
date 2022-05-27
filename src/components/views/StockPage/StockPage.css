@@ -11,8 +11,8 @@
 }
 
 .stock-page-horizontal-grey-line {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     height: 1px;
     flex-grow: 1;
     background: #DCDCDC;
@@ -63,6 +63,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+
+.stock-page-expert-opinion-container {
+    display: flex;
+    flex-direction: row;
 }
 
 @media (max-width: 1024px) {
