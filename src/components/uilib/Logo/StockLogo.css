@@ -12,9 +12,8 @@
 }
 
 .stock-logo-image {
-    width: 60px;
     height: 60%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .stock-image-update-button {
