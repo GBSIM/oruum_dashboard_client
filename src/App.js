@@ -22,7 +22,7 @@ function App() {
   const dispatch = useDispatch();
   const { input } = useSelector(state => state.stock);
   useEffect(()=> {
-    dispatch(setStatus("AAPL"+'의 데이터를 찾고 있어요. 잠시만 기다려주세요!'));
+    dispatch(setStatus("검색 중"));
     dispatch(getPrice("AAPL",getPastDate(5),getCurrentDate()));
   },[]);
 
