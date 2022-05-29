@@ -174,14 +174,14 @@ export default function StockPage() {
                                 barChartTitle='영업이익'
                                 valueList={operatingincomeList}
                                 labelList={incomeYearList}
-                                posColor={'#34B199'}
+                                posColor={'#9AD8CD'}
                                 negColor={'#F15E5E'}></BarChart>
                             <div className="stock-page-bar-chart-divider"></div>
                             <BarChart
                                 barChartTitle='순이익'
                                 valueList={netProfitList}
                                 labelList={incomeYearList}
-                                posColor={'#074B3F'}
+                                posColor={'#9AD8CD'}
                                 negColor={'#F15E5E'}></BarChart>
                         </div>
                     </div>
