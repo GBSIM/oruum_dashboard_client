@@ -6,7 +6,7 @@ export default function Name(props) {
         <div className='name-container'>
             <div className='name-container'>
                 <button className='name-update-button'>
-                    <div className='name-update-text'>수정하기</div>
+                    {/* <div className='name-update-text'>수정하기</div> */}
                     <h1 className='name'>{props.name}</h1>
                 </button>
             </div>

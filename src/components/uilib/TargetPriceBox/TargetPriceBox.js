@@ -42,16 +42,16 @@ export default function TargetPriceBox(props) {
         <div className='target-price-box-container'>
             <div className='target-price-list'>
                 <TargetPrice title='최고목표가' value={currency + targetPriceHigh.toFixed(1).toString()} topPosition='20px' color='#34B199'></TargetPrice>
-                <TargetPrice title='평균목표가' value={currency + targetPriceAvg.toFixed(1).toString()} topPosition='75px' color='#9AD8CD'></TargetPrice>
-                <TargetPrice title='최저목표가' value={currency + targetPriceLow.toFixed(1).toString()} topPosition='120px' color='#DCDCDC'></TargetPrice>
+                <TargetPrice title='평균목표가' value={currency + targetPriceAvg.toFixed(1).toString()} topPosition='75px' color='#EBB00C'></TargetPrice>
+                <TargetPrice title='최저목표가' value={currency + targetPriceLow.toFixed(1).toString()} topPosition='120px' color='#F15E5E'></TargetPrice>
             </div>
             <div className='target-price-box-vertical-line'>
                 <div className='target-price-circle' style={{'top':'20px','background':'#34B199'}}></div>
                 <div className='target-price-margin' style={{'top':'-6px','color':'#34B199'}}>{marginToHighTarget}%</div>
-                <div className='target-price-circle' style={{'top':'73px','background':'#9AD8CD'}}></div>
-                <div className='target-price-margin' style={{'top':'47px','color':'#9AD8CD'}}>{marginToAvgTarget}%</div>
-                <div className='target-price-circle' style={{'top':'116px','background':'#DCDCDC'}}></div>
-                <div className='target-price-margin' style={{'top':'90px','color':'#DCDCDC'}}>{marginToLowTarget}%</div>
+                <div className='target-price-circle' style={{'top':'73px','background':'#EBB00C'}}></div>
+                <div className='target-price-margin' style={{'top':'47px','color':'#EBB00C'}}>{marginToAvgTarget}%</div>
+                <div className='target-price-circle' style={{'top':'116px','background':'#F15E5E'}}></div>
+                <div className='target-price-margin' style={{'top':'90px','color':'#F15E5E'}}>{marginToLowTarget}%</div>
 
                 <div className='current-price-container' style={{'top': currentPricePosition}}>
                     <div className='current-price-line'></div>
