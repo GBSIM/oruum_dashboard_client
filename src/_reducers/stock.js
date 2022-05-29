@@ -53,6 +53,7 @@ const initialState = {
   ttmReceivableTurnover: 30.0,
 
   // financial information
+  dividend: 0.22,
   EPS: 7.8,
   incomeYearList: ['2018','2019','2020','2021','2022(E)'],
   revenueList: [20,40,60,100,150],
@@ -92,6 +93,19 @@ const initialState = {
   productTagLists: [['전자제품','IT'],['전자제품','IT'],],
   productSummaryList: ['아이폰, 애플 매출의 핵심!',''],
   productDetailLists: [['전세계 $450B의 스마트폰 시장에서 애플은 무려 %196B 차지! (43.6%)','2021년 4분기 스마트폰 출하량 22%로 1위!',['점점 더 커지는 프리미엄 스마트폰 시장, 그리고 애플의 프리미엄폰 시장에서의 확고한 위치!']],[]],
+  
+  // news
+  newsLinkList: ['https://www.hankookilbo.com/News/Read/A2022052909160003125',
+                 'http://it.chosun.com/site/data/html_dir/2022/05/27/2022052701662.html'],
+  newsImageList: ['https://newsimg-hams.hankookilbo.com/2022/05/29/129025b4-2f98-41e0-9c6c-2f50c1cb3294.jpg',
+                  'http://itimg.chosun.com/sitedata/image/202205/27/2022052701656_0.png'],
+  newsTitleList: ['애플 iOS16·MR헤드셋 공개하나...WWDC 앞두고 숨죽인 IT시장',
+                  '애플 올해 아이폰 생산량 작년 수준 "2.2억대" 그칠 듯'],
+  newsSummaryList: ['글로벌 정보기술(IT) 기업 애플의 최대 연례행사 "세계 개발자 회의(WWDC)"가 임박하면서 새로운 운...',
+                    '애플의 올해 아이폰 생산량이 2021년 수준에 그칠 것이란 전망이 나왔다. 중국 봉쇄 악재와 공급망 불안 등에 따른 모바일 시장 부진으로 애플이 생산 감축에 돌입했기 때문이라는 분석이 나온다.'],
+  newsJournalList: ['한국일보','조선일보'],
+  newsDateList: ['2022.05.29','2022.05.27']
+
 };
 
 export async function getPrice(tickerInput, startDate, endDate) {

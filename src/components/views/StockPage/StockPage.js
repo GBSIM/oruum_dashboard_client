@@ -21,6 +21,7 @@ import ExpertOpniionTable from "../../uilib/ExpertOpinionTable/ExpertOpinionTabl
 import ExpertTargetPriceBox from "../../uilib/ExpertTargetPriceBox/ExpertTargetPriceBox";
 import TargetPriceBox from "../../uilib/TargetPriceBox/TargetPriceBox";
 import LeaderBox from "../../uilib/LeaderBox/LeaderBox";
+import NewsBox from "../../uilib/NewsBox/NewsBox";
 
 export default function StockPage() {
     const {name, ticker, currency, capability} = useSelector(state => state.stock);
@@ -37,17 +38,17 @@ export default function StockPage() {
            ttmAssetTurnover,ttmInventoryTurnover,ttmReceivableTurnover} =  useSelector(state => state.stock);
     const {estimatesPeriodList,estimatesEpsList,estimatesPerHigh,estimatesPerLow,
            estimatesSpsList,estimatesPsrHigh,estimatesPsrLow} = useSelector(state=>state.stock);
-    const {EPS,incomeYearList,revenueList,operatingincomeList,netProfitList} = useSelector(state=>state.stock);
+    const {dividend,EPS,incomeYearList,revenueList,operatingincomeList,netProfitList} = useSelector(state=>state.stock);
     const {opinionList, opinionNumberList,targetPriceHigh,targetPriceAvg,targetPriceLow} = useSelector(state=>(state.stock));
     const {leaderName,leaderContentsList} = useSelector(state=>(state.stock));
-    
+    const {newsTitleList,newsImageList,newsSummaryList,newsJournalList,newsDateList,newsLinkList} = useSelector(state=>(state.stock));    
 
     const summaryTitleList = ["시작가","최고가","최저가",
-                              "거래량","f/w PER","시가총액",
+                              "거래량","분기배당금","시가총액",
                               "52주 최고","52주 최저","고점대비 하락률",
                               "주당순이익","PER(TTM)","PSR(TTM)"];
     const summaryValueList = [lastOpen, lastHigh, lastLow, 
-                              lastVolume, forwardPER, capability, 
+                              lastVolume, dividend, capability, 
                               yearlyHigh, yearlyLow, fallingRatio,
                               EPS, ttmPER, ttmPSR];
     const marginTitleList = ["매출총이익률","영업이익률","순이익률"];
@@ -146,6 +147,17 @@ export default function StockPage() {
                             productDetailLists={productDetailLists}></ProductDetailList>
                     </div>
                     <div className="stock-page-horizontal-grey-line" style={{"marginTop":"0px"}}></div>
+                    <div>
+                        <ContentsTitle title='NEWS'></ContentsTitle>
+                        <NewsBox
+                            newsLinkList = {newsLinkList}
+                            newsTitleList={newsTitleList}
+                            newsImageList={newsImageList}
+                            newsSummaryList={newsSummaryList}
+                            newsJournalList={newsJournalList}
+                            newsDateList={newsDateList}></NewsBox>
+                    </div>
+                    <div className="stock-page-horizontal-grey-line" style={{"marginTop":"30px"}}></div>
                     <div>
                         <div style={{'marginBottom':'0px'}}>
                             <ContentsTitle title='매출과 영업이익은 성장하고 있나요?'></ContentsTitle>
