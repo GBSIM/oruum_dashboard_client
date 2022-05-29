@@ -18,6 +18,7 @@ import ProductDetailList from "../../uilib/ProductDetailList/ProductDetailList";
 import BarChart from "../../uilib/Chart/BarChart";
 import ContentsTitle from "../../uilib/ContentsTitle/ContentsTitle";
 import ExpertOpniionTable from "../../uilib/ExpertOpinionTable/ExpertOpinionTable";
+import ExpertTargetPriceBox from "../../uilib/ExpertTargetPriceBox/ExpertTargetPriceBox";
 import TargetPriceBox from "../../uilib/TargetPriceBox/TargetPriceBox";
 
 export default function StockPage() {
@@ -33,6 +34,8 @@ export default function StockPage() {
            ttmSalesGrowth,ttmOperatingIncomeGrowth,ttmNetProfitGrowth,
            currentDebtRatio,currentQuickRatio,currentCurrentRatio,
            ttmAssetTurnover,ttmInventoryTurnover,ttmReceivableTurnover} =  useSelector(state => state.stock);
+    const {estimatesPeriodList,estimatesEpsList,estimatesPerHigh,estimatesPerLow,
+           estimatesSpsList,estimatesPsrHigh,estimatesPsrLow} = useSelector(state=>state.stock);
     const {EPS,incomeYearList,revenueList,operatingincomeList,netProfitList} = useSelector(state=>state.stock);
     const {opinionList, opinionNumberList,targetPriceHigh,targetPriceAvg,targetPriceLow} = useSelector(state=>(state.stock));
 
@@ -175,14 +178,38 @@ export default function StockPage() {
                         <ExpertOpniionTable
                             opinionList={opinionList}
                             numberList={opinionNumberList}></ExpertOpniionTable>
-                        <TargetPriceBox
+                        <ExpertTargetPriceBox
                             currency={currency}
                             targetPriceHigh={targetPriceHigh}
                             targetPriceAvg={targetPriceAvg}
                             targetPriceLow={targetPriceLow}
-                            currentPrice={currentPrice}></TargetPriceBox>
+                            currentPrice={currentPrice}></ExpertTargetPriceBox>
                     </div>
                     <div className="stock-page-horizontal-grey-line" style={{"marginTop":"40px"}}></div>
+                    <div>
+                        <ContentsTitle title="ORUUM과 함께하는 목표주가 설정하기!"></ContentsTitle>
+                        <div className='stock-page-target-price-box-container'>
+                            <TargetPriceBox
+                                title='순이익으로 주가 예상하기'
+                                factorName='PER'
+                                inputName='순이익'
+                                factorHigh={estimatesPerHigh}
+                                factorLow={estimatesPerLow}
+                                periodList={estimatesPeriodList}
+                                inputList={estimatesEpsList}
+                                unit={currency}></TargetPriceBox>
+                            <div className='stock-page-target-price-box-divider'></div>
+                            <TargetPriceBox
+                                title='매출로 주가 예상하기'
+                                factorName='PSR'
+                                inputName='순이익'
+                                factorHigh={estimatesPsrHigh}
+                                factorLow={estimatesPsrLow}
+                                periodList={estimatesPeriodList}
+                                inputList={estimatesSpsList}
+                                unit={currency}></TargetPriceBox>
+                        </div>
+                    </div>
                 </div>
             </div>
             <BottomNavBar></BottomNavBar>

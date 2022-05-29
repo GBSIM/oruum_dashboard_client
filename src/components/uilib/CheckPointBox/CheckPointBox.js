@@ -27,7 +27,7 @@ function CheckPointText(props) {
     return (
         <div className="check-point-container">
             <img className='check-point-image' src={props.image} alt='check'></img>
-            <span className='check-point-text'>{props.textCheckPoint}</span>
+            <button className='check-point-text'>{props.textCheckPoint}</button>
         </div>
     )
 }

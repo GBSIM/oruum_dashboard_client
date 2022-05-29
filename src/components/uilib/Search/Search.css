@@ -1,4 +1,7 @@
 .search-container {
+    width: 70%;
+    max-width: 70%;
+    min-width: 70%;
     height: 40px;
     background: white;
     display: flex;
@@ -9,6 +12,8 @@
 
 .search-input { 
     width: 70%;
+    max-width: 70%;
+    min-width: 70%;
     margin-left: 30px;
     border: 1px solid #DCDCDC;
     border-radius: 20px;

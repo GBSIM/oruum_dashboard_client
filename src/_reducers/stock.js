@@ -59,7 +59,16 @@ const initialState = {
   operatingincomeList: [-50,-30,-20,60,100],
   netProfitList: [-50,-40,-10,50,80],
 
-  // Expert opinion
+  // financial estimates
+  estimatesPeriodList: ['2021','2022','2023','2024'],
+  estimatesEpsList: [5.61,6.16,6.56,0],
+  estimatesPerHigh: 35,
+  estimatesPerLow: 15,
+  estimatesSpsList: [21.69,23.46,24.77,0],
+  estimatesPsrHigh: 7.8,
+  estimatesPsrLow: 3.5,
+
+  // expert opinion
   opinionList: ['강력 매수','매수','중립','매도','강력 매도'],
   opinionNumberList: [10,10,10,10,10],
   targetPriceHigh: 225,

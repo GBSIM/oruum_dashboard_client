@@ -12,6 +12,10 @@
     color: #696969;
 }
 
+.check-point-text:hover {
+    color: #DCDCDC;
+}
+
 .check-point-header {
     color: #333333;
     margin: 0;

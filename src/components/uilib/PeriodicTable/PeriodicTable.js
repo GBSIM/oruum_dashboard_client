@@ -19,9 +19,9 @@ export default function PeriodicTable (props) {
 
 function PeriodicTableTitle(props) {
     return (
-        <h2 className='periodic-table-header'>
+        <h3 className='periodic-table-header'>
             {props.title}
-        </h2>
+        </h3>
     )
 }
 
