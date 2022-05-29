@@ -27,15 +27,15 @@ export default function ProductTable(props) {
 function TableRow(props) {
     return (
         <div className='product-table-row'>
-            <div className='product-table-contents product'>
+            <button className='product-table-contents product'>
                 {props.product}
-            </div>
-            <div className='product-table-contents sales-ratio'>
+            </button>
+            <button className='product-table-contents sales-ratio'>
                 {props.salesRatio}%
-            </div>
-            <div className='product-table-contents growth'>
+            </button>
+            <button className='product-table-contents growth'>
                 {props.growth}%
-            </div>
+            </button>
             <div className='product-table-contents tag-list-container'>
                 <TagBox tagList={props.tagList}></TagBox>
             </div>

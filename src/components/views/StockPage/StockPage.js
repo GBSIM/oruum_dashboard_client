@@ -20,6 +20,7 @@ import ContentsTitle from "../../uilib/ContentsTitle/ContentsTitle";
 import ExpertOpniionTable from "../../uilib/ExpertOpinionTable/ExpertOpinionTable";
 import ExpertTargetPriceBox from "../../uilib/ExpertTargetPriceBox/ExpertTargetPriceBox";
 import TargetPriceBox from "../../uilib/TargetPriceBox/TargetPriceBox";
+import LeaderBox from "../../uilib/LeaderBox/LeaderBox";
 
 export default function StockPage() {
     const {name, ticker, currency, capability} = useSelector(state => state.stock);
@@ -38,6 +39,8 @@ export default function StockPage() {
            estimatesSpsList,estimatesPsrHigh,estimatesPsrLow} = useSelector(state=>state.stock);
     const {EPS,incomeYearList,revenueList,operatingincomeList,netProfitList} = useSelector(state=>state.stock);
     const {opinionList, opinionNumberList,targetPriceHigh,targetPriceAvg,targetPriceLow} = useSelector(state=>(state.stock));
+    const {leaderName,leaderContentsList} = useSelector(state=>(state.stock));
+    
 
     const summaryTitleList = ["시작가","최고가","최저가",
                               "거래량","f/w PER","시가총액",
@@ -209,6 +212,13 @@ export default function StockPage() {
                                 inputList={estimatesSpsList}
                                 unit={currency}></TargetPriceBox>
                         </div>
+                    </div>
+                    <div className="stock-page-horizontal-grey-line" style={{"marginTop":"10px"}}></div>
+                    <div>
+                        <ContentsTitle title='CEO 정보'></ContentsTitle>
+                        <LeaderBox
+                            leaderName={leaderName}
+                            leaderContentsList={leaderContentsList}></LeaderBox>
                     </div>
                 </div>
             </div>

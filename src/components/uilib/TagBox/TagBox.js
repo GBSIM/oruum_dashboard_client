@@ -14,8 +14,8 @@ export default function TagBox(props) {
 
 function TagUnit(props) {
     return (
-        <div className='tag'>
+        <button className='tag'>
             { props.tagName }
-        </div>
+        </button>
     )
 }

@@ -19,4 +19,8 @@
     align-items: center;
 }
 
+.tag:hover {
+    background: rgba(52,177,153,0.8);
+}
+
 

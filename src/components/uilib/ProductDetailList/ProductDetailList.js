@@ -35,9 +35,11 @@ function ProductDetail(props) {
             <div className='product-summary-container'>
                 <h3 className='product-name'>{props.product}</h3>
                 <div className='product-summary-divider'></div>
-                <h3 className='product-summary'>
-                    {Summary}
-                </h3>
+                <button className='product-summary-button'>
+                    <h3 className='product-summary'>
+                        {Summary}
+                    </h3>
+                </button>
             </div>
             {ProductDetailContentsList}
             <ContentsAddButton buttonText='새로운 설명 추가하기'></ContentsAddButton>        
@@ -51,9 +53,9 @@ function ProductDetailContents(props) {
             <div className='product-detail-contents-icon-container'>
                 <img src={require('./images/icon_detail.png')} className='product-detail-contents-icon'></img>
             </div>
-            <div className='product-detail-contents'>
+            <button className='product-detail-contents'>
                 {props.productDetail}
-            </div>
+            </button>
         </div>
     )
 }

@@ -74,6 +74,13 @@ const initialState = {
   targetPriceHigh: 225,
   targetPriceAvg: 193.5,
   targetPriceLow: 160,
+
+  // CEO
+  leaderName: '팀 쿡 (Timothy Donald Cook)',
+  leaderContentsList: ['2011년 스티브 잡스가 세상을 떠나면서 팀쿡이 애플의 CEO를 맡게되었어요.',
+                    '애플 이전에는 IBM과 컴팩이라는 회사에서 근무했고 모두 생상 관리를 하는 직책을 맡았어요.',
+                    'Operations Management (OM) 분야에서 굉장한 능력을 보유하고 있는 사람이에요.',
+                    '효율적인 경영과 에어팟 같은 신제품을 통해 매출과 이익을 늘렸고 10년동안 주가는 무려 7배나 상승했어요!'],
   
   // oruum contents
   tagList: ['태그 1','태그 2','태그 3','태그 4'],
