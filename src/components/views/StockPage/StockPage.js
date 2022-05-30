@@ -22,6 +22,7 @@ import ExpertTargetPriceBox from "../../uilib/ExpertTargetPriceBox/ExpertTargetP
 import TargetPriceBox from "../../uilib/TargetPriceBox/TargetPriceBox";
 import LeaderBox from "../../uilib/LeaderBox/LeaderBox";
 import NewsBox from "../../uilib/NewsBox/NewsBox";
+import ContentsUpdateButton from "../../uilib/ContentsUpdateButton/ContentsUpdateButton";
 
 export default function StockPage() {
     const {name, ticker, currency, capability} = useSelector(state => state.stock);
@@ -148,7 +149,10 @@ export default function StockPage() {
                     </div>
                     <div className="stock-page-horizontal-grey-line" style={{"marginTop":"0px"}}></div>
                     <div>
-                        <ContentsTitle title='NEWS'></ContentsTitle>
+                        <div style={{'display':'flex','flexDirection':'row'}}>
+                            <ContentsTitle title='NEWS'></ContentsTitle>
+                            <ContentsUpdateButton buttonText='수정하기'></ContentsUpdateButton>
+                        </div>
                         <NewsBox
                             newsLinkList = {newsLinkList}
                             newsTitleList={newsTitleList}
