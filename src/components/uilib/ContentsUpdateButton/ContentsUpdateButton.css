@@ -11,3 +11,9 @@
 .contents-update-button:hover {
     background: rgba(52,177,153,0.8);
 }
+
+@media (max-width: 600px) {
+    .contents-update-button {
+        display: none;
+    }
+}
