@@ -55,7 +55,6 @@
 }
 
 .indicator-value {
-    font-size: 32px;
     font-weight: 500;
     color: #34B199;
     margin: 0;
@@ -66,11 +65,5 @@
     .indicator-box-title-image-container {
         width: 30px;
         height: 30px;
-    }
-}
-
-@media (max-width: 600px) {
-    .indicator-value {
-        font-size: 24px;
     }
 }

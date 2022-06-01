@@ -10,7 +10,6 @@
 }
 
 .leader-contents {
-    font-size: 20px;
     color: #696969;
     margin-left: 8px;
     padding: 0px;
@@ -35,11 +34,4 @@
     height: 80%;
     width: 80%;
     object-fit: cover;
-}
-
-
-@media (max-width: 600px) {
-    .leader-contents {
-        font-size: 16px;
-    }
 }

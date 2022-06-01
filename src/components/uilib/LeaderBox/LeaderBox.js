@@ -21,7 +21,7 @@ function LeaderContents(props) {
                 <img src={require('./images/icon_detail.png')} className='leader-contents-icon'></img>
             </div>
             <button className='leader-contents'>
-                {props.leaderContents}
+                <span>{props.leaderContents}</span>
             </button>
         </div>
     )

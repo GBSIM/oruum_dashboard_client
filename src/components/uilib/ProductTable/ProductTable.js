@@ -28,13 +28,13 @@ function TableRow(props) {
     return (
         <div className='product-table-row'>
             <button className='product-table-contents product'>
-                {props.product}
+                <span>{props.product}</span>
             </button>
             <button className='product-table-contents sales-ratio'>
-                {props.salesRatio}%
+                <span>{props.salesRatio}%</span>
             </button>
             <button className='product-table-contents growth'>
-                {props.growth}%
+                <span>{props.growth}%</span>
             </button>
             <div className='product-table-contents tag-list-container'>
                 <TagBox tagList={props.tagList}></TagBox>
@@ -47,16 +47,16 @@ function TableHeader(props) {
     return (
         <div className='product-table-row header'>
             <div className='product-table-contents product'>
-                제품
+                <span>제품</span>
             </div>
             <div className='product-table-contents sales-ratio'>
-                매출비율
+                <span>매출비율</span>
             </div>
             <div className='product-table-contents growth'>
-                전년대비 성장
+                <span>전년대비 성장</span>
             </div>
             <div className='product-table-contents tag-list-container'>
-                태그
+                <span>태그</span>
             </div>
         </div>
     )

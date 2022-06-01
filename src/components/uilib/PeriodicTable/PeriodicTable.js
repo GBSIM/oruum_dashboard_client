@@ -50,7 +50,7 @@ function PeriodicTableRow(props) {
 
     return (
         <div className='periodic-table-row'>
-            <div className='periodic-table-row-header'>{dataName}</div>
+            <div className='periodic-table-row-header'><span>{dataName}</span></div>
             {TableContents}            
         </div>
     )
@@ -64,7 +64,7 @@ function PeriodicDateRow(props) {
 
     return (
         <div className='periodic-table-row date'>
-            <div className='periodic-table-row-header'>{props.headerText}</div>
+            <div className='periodic-table-row-header'><span>{props.headerText}</span></div>
             {DateContents}            
         </div>
     )
@@ -72,7 +72,7 @@ function PeriodicDateRow(props) {
 
 function PeriodicTableData(props) {
     return (
-        <div className='periodic-table-content'>{props.content}</div>
+        <div className='periodic-table-content'><span>{props.content}</span></div>
     )
 }
 
@@ -81,7 +81,9 @@ function PeriodicTableUnit(props) {
 
     return (
         <div className="periodic-table-unit">
-            단위: {unit}
+            <span>
+                단위: {unit}
+            </span>
         </div>
     )
 }

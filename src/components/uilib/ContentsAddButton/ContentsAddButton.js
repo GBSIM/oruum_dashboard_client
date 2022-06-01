@@ -7,7 +7,7 @@ export default function ContentsAddButton(props) {
                 +
             </button>
             <button className='contents-add-text'>
-                {props.buttonText}
+                <span>{props.buttonText}</span>
             </button>
         </div>
     )

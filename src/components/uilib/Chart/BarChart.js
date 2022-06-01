@@ -40,11 +40,11 @@ function Bar(props) {
     let ColorValue;
     let ColorBar;
     if (value > 0) {
-        ColorValue = <div className='unit-bar-value' style={{'color':posColor}}>{value}</div>
+        ColorValue = <div className='unit-bar-value' style={{'color':posColor}}><span>{value}</span></div>
         ColorBar = <div className='unit-bar' style={{'height':barHeight,'background':posColor}}></div>
     }
     else {
-        ColorValue = <div className='unit-bar-value' style={{'color':negColor}}>{value}</div>
+        ColorValue = <div className='unit-bar-value' style={{'color':negColor}}><span>{value}</span></div>
         ColorBar = <div className='unit-bar' style={{'height':barHeight,'background':negColor}}></div>
     }
 
@@ -53,7 +53,7 @@ function Bar(props) {
             {ColorValue}
             {ColorBar}
             <div className='unit-bar-label'>
-                {label}
+                <span>{label}</span>
             </div>
         </div>
     )

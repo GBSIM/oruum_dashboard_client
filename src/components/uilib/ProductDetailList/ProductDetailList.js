@@ -54,7 +54,7 @@ function ProductDetailContents(props) {
                 <img src={require('./images/icon_detail.png')} className='product-detail-contents-icon'></img>
             </div>
             <button className='product-detail-contents'>
-                {props.productDetail}
+                <span>{props.productDetail}</span>
             </button>
         </div>
     )

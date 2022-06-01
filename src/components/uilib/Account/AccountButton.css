@@ -16,3 +16,9 @@
 .account-button:hover {
     background: rgba(52, 177, 153, 0.8);
 }
+
+@media (max-width: 600px) {
+    .account-button {
+        display: none;
+    }
+}

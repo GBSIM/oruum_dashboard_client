@@ -17,7 +17,7 @@
 
 .menu {
     height: 50px;
-    width: 250px;
+    width: 200px;
     /* background-color: #fff; */
     /* margin-top: 10px; */
     display: flex;
@@ -44,7 +44,7 @@
 .menu-image-container {
     height: 24px;
     width: 24px;
-    margin-left: 33px;
+    margin-left: 30px;
 }
 
 .menu-text {

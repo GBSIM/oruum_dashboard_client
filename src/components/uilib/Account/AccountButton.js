@@ -22,7 +22,7 @@ export default function AccountButton() {
     }
     return (
         <button type='button' className="account-button" onClick={accountAccess}>
-            { buttonText }
+            <span>{ buttonText }</span>
         </button>
     )
 }

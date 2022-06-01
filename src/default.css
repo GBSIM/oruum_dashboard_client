@@ -79,22 +79,22 @@ button {
 }
 
 h1 {
-	font-size: 32px;
-	margin: 0;
-}
-
-h2 {
 	font-size: 28px;
 	margin: 0;
 }
 
-h3 {
+h2 {
 	font-size: 24px;
 	margin: 0;
 }
 
-h4 {
+h3 {
 	font-size: 20px;
+	margin: 0;
+}
+
+h4 {
+	font-size: 16px;
 	margin: 0;
 }
 
@@ -113,20 +113,33 @@ span {
 
 @media (max-width: 1024px) {
 	h1 {
-		font-size: 28px;
+		font-size: 26px;
 	}
 	h2 {
-		font-size: 24px;
+		font-size: 22px;
 	}
 	h3 {
-		font-size: 20px;
+		font-size: 18px;
 	}
 	span {
-		font-size: 12px;
+		font-size: 16px;
 	}
 }
 
 @media (max-width: 600px) {
+	h1 {
+		font-size: 24px;
+	}
+	h2 {
+		font-size: 20px;
+	}
+	h3 {
+		font-size: 16px;
+	}
+	span {
+		font-size: 14px;
+	}
+
 	.page {
 		flex-direction: column;
 	}

@@ -29,7 +29,7 @@ function IndicatorTitle(props) {
 function Indicator(props) {
     return (
         <div className="indicator-container">
-            <div className="indicator-title">{props.title}</div>
+            <div className="indicator-title"><span>{props.title}</span></div>
             <h1 className="indicator-value">{props.value}%</h1>
         </div>
     )

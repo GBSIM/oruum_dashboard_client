@@ -15,6 +15,7 @@
 .opinion-table-row.header {
     border-bottom: 2px solid #DCDCDC;
     z-index: 0;
+    padding-bottom: 0px;
 }
 
 .opinion-table-contents {
@@ -23,7 +24,6 @@
     align-items: center;
     justify-content: space-around;
     color: #696969;
-    font-size: 20px;
 }
 
 .opinion-table-contents.opinion {
@@ -39,10 +39,4 @@
 .opinion-table-contents.ratio {
     width: 120px;
     flex: 1;
-}
-
-@media (max-width: 600px) {
-    .opinion-table-contents {
-        font-size: 16px;
-    }
 }

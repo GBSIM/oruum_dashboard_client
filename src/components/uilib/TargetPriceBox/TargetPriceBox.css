@@ -16,13 +16,7 @@
 }
 
 .factor-box-title {
-    font-size: 20px;
     color: #DCDCDC;
-}
-
-.factor-box-value {
-    font-size: 20px;
-    font-weight: 500;
 }
 
 .factor-box-value.high {
@@ -31,13 +25,4 @@
 
 .factor-box-value.low {
     color: #F15E5E;
-}
-
-@media (max-width: 600px) {
-    .factor-box-value {
-        font-size: 18px;
-    }
-    .factor-box-title {
-        font-size: 18px;
-    }
 }

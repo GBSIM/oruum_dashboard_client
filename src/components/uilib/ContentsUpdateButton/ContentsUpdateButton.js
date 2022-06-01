@@ -3,7 +3,7 @@ import './ContentsUpdateButton.css';
 export default function ContentsUpdateButton(props) {
     return (
         <button className='contents-update-button'>
-            {props.buttonText}
+            <span>{props.buttonText}</span>
         </button>
     )
 }

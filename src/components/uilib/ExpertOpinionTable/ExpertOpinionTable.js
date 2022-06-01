@@ -29,13 +29,13 @@ function TableRow(props) {
     return (
         <div className='opinion-table-row'>
             <div className='opinion-table-contents opinion'>
-                {props.opinion}
+                <span>{props.opinion}</span>
             </div>
             <div className='opinion-table-contents number'>
-                {props.number}
+                <span>{props.number}</span>
             </div>
             <div className='opinion-table-contents ratio'>
-                {props.ratio}
+                <span>{props.ratio}</span>
             </div>
         </div>
     )
@@ -45,13 +45,13 @@ function TableHeader(props) {
     return (
         <div className='opinion-table-row header'>
             <div className='opinion-table-contents opinion'>
-                의견
+                <span>의견</span>
             </div>
             <div className='opinion-table-contents number'>
-                갯수
+                <span>개수</span>
             </div>
             <div className='opinion-table-contents ratio'>
-                비율
+                <span>비율</span>
             </div>
         </div>
     )

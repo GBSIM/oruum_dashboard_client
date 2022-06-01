@@ -24,7 +24,7 @@ export default function TargetPriceBox(props) {
 
     return (
         <div className='target-price-box-container'>
-            <h3 className='target-price-box-title'>{title}</h3>
+            <h2 className='target-price-box-title'>{title}</h2>
             <FactorBox
                 factorName={factorName}
                 factorHigh={factorHigh}
@@ -42,12 +42,12 @@ function FactorBox(props) {
     return (
         <div className='factor-box-container'>
             <div style={{'display':'flex','flexDirection':'row'}}>
-                <div className='factor-box-title'>최고{props.factorName} | &nbsp;</div>
-                <div className='factor-box-value high'>{props.factorHigh}</div>
+                <div className='factor-box-title'><h3 className='factor-box-title'>최고{props.factorName} | &nbsp;</h3></div>
+                <div className='factor-box-value high'><h3 className='factor-box-value high'>{props.factorHigh}</h3></div>
             </div>
             <div style={{'display':'flex','flexDirection':'row'}}>
-                <div className='factor-box-title'>최저{props.factorName} |&nbsp;</div>
-                <div className='factor-box-value low'>{props.factorLow}</div>
+                <div className='factor-box-title'><h3 className='factor-box-title'>최저{props.factorName} |&nbsp;</h3></div>
+                <div className='factor-box-value low'><h3 className='factor-box-value low'>{props.factorLow}</h3></div>
             </div>
         </div>
     )
