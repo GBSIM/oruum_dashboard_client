@@ -1,0 +1,50 @@
+.stock-price-line-graph-container {
+    margin-top: 20px;
+}
+
+.period-selector {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: 1px solid #DCDCDC;
+    border-bottom: 1px solid #DCDCDC;
+}
+
+.period-button-container {
+    display:flex;
+    flex-direction:row;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.period-button {
+    color: #B9B9B9;
+}
+
+.period-button {
+    color: rgba(185,185,185,0.8);
+    height: 30px;
+    width: 60px;
+}
+
+.period-button:hover {
+    color: rgba(105,105,105,0.8);
+}
+
+.period-button.on {
+    color: #696969;
+    background: #F8F8F8;
+    border-radius: 10px;
+}
+
+.line-chart-container {
+    margin-top: 20px;
+}
+
+.line-chart-canvas {
+    flex-shrink: 1;
+    height: 300px;
+}

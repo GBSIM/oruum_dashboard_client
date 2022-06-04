@@ -1,0 +1,19 @@
+.header-container {
+    height: 60px;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20px;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid #DCDCDC;
+    background: #fff;
+    z-index: 1;
+}
+
+.header-search-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

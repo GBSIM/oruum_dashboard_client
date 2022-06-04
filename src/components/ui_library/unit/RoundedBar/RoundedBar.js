@@ -9,7 +9,6 @@ export default function RoundedBar(props) {
     const maxHeight = props.maxHeight;
 
     const barHeight = String(Math.round(Math.abs(value)/maxValue*maxHeight)) + "px";
-    // const barHeight = '150px';
     const valueText = convert_Number_to_text(value,unit);
 
     if (value >= 0) {

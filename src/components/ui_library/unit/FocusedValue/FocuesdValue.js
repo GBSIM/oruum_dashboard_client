@@ -6,11 +6,11 @@ export default function FocusedValue(props) {
 
     return (
         <div className='focused-value-container'>
-            <span className='focuesd-value-title'>
+            <span className='focused-value-title'>
                 {title}
             </span>
             <h1 className='focused-value'>
-                {value}
+                {value}%
             </h1>
         </div>
     )

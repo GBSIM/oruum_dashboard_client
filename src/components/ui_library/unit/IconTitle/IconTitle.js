@@ -9,7 +9,7 @@ export default function IconTitle(props) {
             <div 
                 style={{width:'30px',height:'30px',background:'#074B3F',display:'flex',flexDirection:'row',
                         justifyContent:'center',alignItems  :'center',padding:'5px',borderRadius:'10px'}}>
-                <img src={image}></img>
+                <img src={image} style={{width:'24px',height:'24px'}}></img>
             </div>
             <h2 style={{color:'#696969',marginBottom:'0px',marginLeft:'10px'}}>{title}</h2>
         </div>

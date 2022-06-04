@@ -1,25 +1,35 @@
-import { Line } from 'react-chartjs-2';
-
 import './StockPriceLineGraph.css';
 
+import { useSelector } from "react-redux";
+import { Line } from 'react-chartjs-2';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
+
 export default function StockPriceLineGraph() {
+    const {plotPeriod,date,close} = useSelector(state => state.stock);
+    const periodList = ['1일','1주','1달','3달','6달','1년','2년','5년','10년','모두'];
+
+    const periodButtonList = periodList.map((period,index) => (
+        <PeriodButton periodName={period} key={index} activatedPeriod={plotPeriod}></PeriodButton>
+    ))
+
     return (
         <div className='stock-price-line-graph-container'>
             <div className='period-selector'>
-                <button className='period-button'>1일</button>
+                {periodButtonList}
             </div>
-            {/* <div className='line-chart-canvas'>
+            <div className='line-chart-canvas'>
                 <Line
                     className='line-chart'
                     width="100vw"
                     data={{
-                        labels: xdata,
+                        labels: date,
                         datasets: [
                             {
                             backgroundColor: 'rgba(75,192,192,1)',
                             borderColor: 'rgba(154,216,205,1)',
                             borderWidth: 2,
-                            data: ydata,
+                            data: close,
                             pointRadius: 0
                             }
                         ]
@@ -62,7 +72,30 @@ export default function StockPriceLineGraph() {
                             },
                         }}}
                     />
-            </div> */}
+            </div>
         </div>
     )
+}
+
+function PeriodButton(props) {
+    const periodName = props.periodName;
+    const activatedPeriod = props.activatedPeriod;
+
+    if (activatedPeriod === periodName) {
+        return (
+            <div className="period-button-container">
+                <button className='period-button on'>
+                    {periodName}
+                </button>
+            </div>
+        )
+    } else {
+        return (
+            <div className="period-button-container">
+                <button className='period-button'>
+                    <span>{periodName}</span>
+                </button>
+            </div>
+        )
+    }    
 }

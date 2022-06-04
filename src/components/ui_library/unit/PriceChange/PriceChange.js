@@ -1,10 +1,9 @@
-import { useSelector } from "react-redux";
 import './PriceChange.css';
 
-export default function PriceChange() {
-    const {lastChange} = useSelector(state => state.stock);
-    const {lastChangeRate} = useSelector(state => state.stock);
-    const {lastChangeSign} = useSelector(state => state.stock);
+export default function PriceChange(props) {
+    const lastChange = props.lastChange;
+    const lastChangeRate = props.lastChangeRate;
+    const lastChangeSign = props.lastChangeSign;
 
     if (lastChangeSign) {
         return (
