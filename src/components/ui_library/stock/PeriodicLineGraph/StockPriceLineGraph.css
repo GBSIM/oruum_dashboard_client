@@ -1,0 +1,19 @@
+.stock-price-line-graph-container {
+    margin-top: 20px;
+}
+
+.period-selector {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: 1px solid #DCDCDC;
+    border-bottom: 1px solid #DCDCDC;
+}
+
+.period-button {
+    color: #B9B9B9;
+}
+
+.period-button {
+    color: rgba(185,185,185,0.8);
+}

@@ -1,244 +1,69 @@
-import { useSelector } from "react-redux";
-
 import './StockPage.css';
 import '../../../default.css';
 import NavBar from "../../uilib/NavBar/NavBar";
 import Header from "../../uilib/Header/Header";
-import Name from "../../uilib/Name/Name";
-import TagBox from "../../uilib/TagBox/TagBox";
-import PriceBox from "../../uilib/PriceBox/PriceBox";
-import LineChart from '../../uilib/Chart/LineChart';
-import CheckPointBox from "../../uilib/CheckPointBox/CheckPointBox";
-import Summary from "../../uilib/Summary/Summary";
-import StockLogo from "../../uilib/Logo/StockLogo";
 import BottomNavBar from "../../uilib/NavBar/BottomNavBar";
-import IndicatorBox from "../../uilib/IndicatorBox/IndicatorBox";
-import ProductTable from "../../uilib/ProductTable/ProductTable";
-import ProductDetailList from "../../uilib/ProductDetailList/ProductDetailList";
-import BarChart from "../../uilib/Chart/BarChart";
-import ContentsTitle from "../../uilib/ContentsTitle/ContentsTitle";
-import ExpertOpniionTable from "../../uilib/ExpertOpinionTable/ExpertOpinionTable";
-import ExpertTargetPriceBox from "../../uilib/ExpertTargetPriceBox/ExpertTargetPriceBox";
-import TargetPriceBox from "../../uilib/TargetPriceBox/TargetPriceBox";
-import LeaderBox from "../../uilib/LeaderBox/LeaderBox";
-import NewsBox from "../../uilib/NewsBox/NewsBox";
-import ContentsUpdateButton from "../../uilib/ContentsUpdateButton/ContentsUpdateButton";
+
+import StockPriceBlock from "../../ui_library/stock/StockPriceBlock/StockPriceBlock";
+import StockPriceLineGraph from "../../ui_library/stock/PeriodicLineGraph/StockPriceLineGraph";
+import AddButton from "../../ui_library/unit/AddButton/AddButton";
+import TextWithVerticalBar from "../../ui_library/unit/TextWithVerticalBar/TextWithVerticalBar";
+import RoundedSearchInput from '../../ui_library/unit/RoundedSearchInput/RoundedSearchInput';
+import IconCircleButton from '../../ui_library/unit/IconCircleButton/IconCircleButton';
+import Profile from '../../ui_library/unit/Profile/Profile';
+import HorizontalBar from '../../ui_library/unit/HorizontalBar/HorizontalBar';
+import FocusedValue from '../../ui_library/unit/FocusedValue/FocuesdValue';
+import RoundedImage from '../../ui_library/unit/RoundedImage/RoundedImage';
+import RoundedBar from '../../ui_library/unit/RoundedBar/RoundedBar';
+import TableHeader from '../../ui_library/unit/TableHeader/TableHeader';
+import TableContents from '../../ui_library/unit/TableContents/TableContents';
+import News from '../../ui_library/unit/News/News';
+import IconTitle from '../../ui_library/unit/IconTitle/IconTitle';
+import IconMenu from '../../ui_library/unit/IconMenu/IconMenu';
 
 export default function StockPage() {
-    const {name, ticker, currency, capability} = useSelector(state => state.stock);
-    const {date, close, plotPeriod, 
-           currentPrice, lastChange, lastChangeRate, lastChangeSign,
-           lastOpen, lastHigh, lastLow, lastVolume,
-           yearlyHigh, yearlyLow,fallingRatio } = useSelector(state => state.stock);
-    const {tagList,checkListBuy, checkListSell,
-           productList,productSalesRatioList,productGrowthList,productTagLists,productSummaryList,productDetailLists} = useSelector(state => state.stock);
-    const {forwardPER, ttmPER, ttmPSR,
-           currentGrossMargin,currentOperatingMargin,currentNetProfitMargin,
-           ttmSalesGrowth,ttmOperatingIncomeGrowth,ttmNetProfitGrowth,
-           currentDebtRatio,currentQuickRatio,currentCurrentRatio,
-           ttmAssetTurnover,ttmInventoryTurnover,ttmReceivableTurnover} =  useSelector(state => state.stock);
-    const {estimatesPeriodList,estimatesEpsList,estimatesPerHigh,estimatesPerLow,
-           estimatesSpsList,estimatesPsrHigh,estimatesPsrLow} = useSelector(state=>state.stock);
-    const {dividend,EPS,incomeYearList,revenueList,operatingincomeList,netProfitList} = useSelector(state=>state.stock);
-    const {opinionList, opinionNumberList,targetPriceHigh,targetPriceAvg,targetPriceLow} = useSelector(state=>(state.stock));
-    const {leaderName,leaderContentsList} = useSelector(state=>(state.stock));
-    const {newsTitleList,newsImageList,newsSummaryList,newsJournalList,newsDateList,newsLinkList} = useSelector(state=>(state.stock));    
-
-    const summaryTitleList = ["시작가","최고가","최저가",
-                              "거래량","분기배당금","시가총액",
-                              "52주 최고","52주 최저","고점대비 하락률",
-                              "주당순이익","PER(TTM)","PSR(TTM)"];
-    const summaryValueList = [lastOpen, lastHigh, lastLow, 
-                              lastVolume, dividend, capability, 
-                              yearlyHigh, yearlyLow, fallingRatio,
-                              EPS, ttmPER, ttmPSR];
-    const marginTitleList = ["매출총이익률","영업이익률","순이익률"];
-    const marginValueList = [currentGrossMargin,currentOperatingMargin,currentNetProfitMargin];
-    const growthTitleList = ["매출액 성장률","영업이익 성장률","순이익 성장률"];
-    const growthValueList = [ttmSalesGrowth,ttmOperatingIncomeGrowth,ttmNetProfitGrowth];
-    const stabilityTitleList = ["부채비율","유동비율","당좌비율"];
-    const stabilityValueList = [currentDebtRatio,currentQuickRatio,currentCurrentRatio];
-    const activityTitleList = ["재고자산 회전율","매출채권 회전율","자산 회전율"];
-    const activityValueList = [ttmInventoryTurnover,ttmReceivableTurnover,ttmAssetTurnover];
-
+    
     return (
         <div className='page'>
             <NavBar></NavBar>
-            <div className='main-content'>
+            <div className='main-contents'>
                 <Header>
                 </Header>
-                <div className='main-contents'>
-                    <div style={{"display":"flex","flexDirection":"row","alignItems":"center"}}>
-                        <StockLogo></StockLogo>
-                        <div>
-                            <Name name={ name } subname={ ticker }></Name>
-                            <PriceBox currency = {currency}
-                                currentPrice={currentPrice}
-                                lastChange={lastChange}
-                                lastChangeRate={lastChangeRate}
-                                lastChangeSign={lastChangeSign}></PriceBox>
-                        </div>
-                    </div>
-                    <div style={{'marginTop':'20px'}}>
-                        <TagBox tagList={tagList}></TagBox>
-                    </div>
-                    <LineChart 
-                        periodNameList={["1일","1주","1달","3달","6달","1년","2년","5년","10년","최대"]} 
-                        periodState={plotPeriod}
-                        xdata={{date}.date}
-                        ydata={{close}.close}></LineChart>
-                    <Summary 
-                        titleList={summaryTitleList} 
-                        valueList={summaryValueList} 
-                        numberRows = {3}></Summary>
-                    <div className='check-box-container'>
-                        <CheckPointBox 
-                            headerText={{name}.name+', 매수하자!'} 
-                            checkPointList={checkListBuy}
-                            image={require('./images/icon_up.png')}></CheckPointBox>
-                        <CheckPointBox 
-                            headerText={{name}.name+', 좀 더 생각해봐야...!?'} 
-                            checkPointList={checkListSell}
-                            image={require('./images/icon_down.png')}></CheckPointBox>
-                    </div>
-                    <div className="stock-page-horizontal-grey-line"></div>
-                    <div className="stock-ratio-box-container-group">
-                        <div className="stock-ratio-box-container">
-                            <IndicatorBox
-                                image={require('./images/icon_profit.png')}
-                                title="수익성"
-                                indicatorTitleList={marginTitleList}
-                                indicatorValueList={marginValueList}></IndicatorBox>
-                            <div className="stock-page-vertical-grey-line"></div>
-                            <IndicatorBox
-                                image={require('./images/icon_growth.png')}
-                                title="성장성"
-                                indicatorTitleList={growthTitleList}
-                                indicatorValueList={growthValueList}></IndicatorBox>
-                        </div>
-                        <div className="stock-ratio-box-divider"></div>
-                        <div className="stock-ratio-box-container">
-                            <IndicatorBox
-                                image={require('./images/icon_stability.png')}
-                                title="안정성"
-                                indicatorTitleList={stabilityTitleList}
-                                indicatorValueList={stabilityValueList}></IndicatorBox>
-                            <div className="stock-page-vertical-grey-line"></div>
-                            <IndicatorBox
-                                image={require('./images/icon_return.png')}
-                                title="활동성"
-                                indicatorTitleList={activityTitleList}
-                                indicatorValueList={activityValueList}></IndicatorBox>
-                        </div>
-                    </div>
-                    <div className="stock-page-horizontal-grey-line" style={{"marginTop":"0px"}}></div>
-                    <div>
-                        <ProductTable
-                            title={{name}.name+', 어떤 제품을 파나요?'}
-                            productList={productList}
-                            salesRatioList={productSalesRatioList}
-                            growthList={productGrowthList}
-                            tagLists={productTagLists}></ProductTable>
-                    </div>
-                    <div style={{'marginTop':'30px'}}>
-                        <ProductDetailList
-                            title={{name}.name+'의 제품에 대해 자세히 알고 싶어요!'}
-                            productList={productList}
-                            productSummaryList={productSummaryList}
-                            productDetailLists={productDetailLists}></ProductDetailList>
-                    </div>
-                    <div className="stock-page-horizontal-grey-line" style={{"marginTop":"0px"}}></div>
-                    <div>
-                        <div style={{'display':'flex','flexDirection':'row'}}>
-                            <ContentsTitle title='NEWS'></ContentsTitle>
-                            <ContentsUpdateButton buttonText='수정하기'></ContentsUpdateButton>
-                        </div>
-                        <NewsBox
-                            newsLinkList = {newsLinkList}
-                            newsTitleList={newsTitleList}
-                            newsImageList={newsImageList}
-                            newsSummaryList={newsSummaryList}
-                            newsJournalList={newsJournalList}
-                            newsDateList={newsDateList}></NewsBox>
-                    </div>
-                    <div className="stock-page-horizontal-grey-line" style={{"marginTop":"30px"}}></div>
-                    <div>
-                        <div style={{'marginBottom':'0px'}}>
-                            <ContentsTitle title='매출과 영업이익은 성장하고 있나요?'></ContentsTitle>
-                        </div>
-                        <div className="bar-chart-list-container">
-                            <BarChart
-                                barChartTitle='매출'
-                                valueList={revenueList}
-                                labelList={incomeYearList}
-                                posColor={'#9AD8CD'}
-                                negColor={'#F15E5E'}></BarChart>
-                            <div className="stock-page-bar-chart-divider"></div>
-                            <BarChart
-                                barChartTitle='영업이익'
-                                valueList={operatingincomeList}
-                                labelList={incomeYearList}
-                                posColor={'#9AD8CD'}
-                                negColor={'#F15E5E'}></BarChart>
-                            <div className="stock-page-bar-chart-divider"></div>
-                            <BarChart
-                                barChartTitle='순이익'
-                                valueList={netProfitList}
-                                labelList={incomeYearList}
-                                posColor={'#9AD8CD'}
-                                negColor={'#F15E5E'}></BarChart>
-                        </div>
-                    </div>
-                    <div className="stock-page-horizontal-grey-line" style={{"marginTop":"30px"}}></div>
-                    <div>
-                        <ContentsTitle title='증권사 전문가들은 어떻게 예측하고 있을까?'></ContentsTitle>
-                    </div>
-                    <div className="stock-page-expert-opinion-container">
-                        <ExpertOpniionTable
-                            opinionList={opinionList}
-                            numberList={opinionNumberList}></ExpertOpniionTable>
-                        <ExpertTargetPriceBox
-                            currency={currency}
-                            targetPriceHigh={targetPriceHigh}
-                            targetPriceAvg={targetPriceAvg}
-                            targetPriceLow={targetPriceLow}
-                            currentPrice={currentPrice}></ExpertTargetPriceBox>
-                    </div>
-                    <div className="stock-page-horizontal-grey-line" style={{"marginTop":"40px"}}></div>
-                    <div>
-                        <ContentsTitle title="ORUUM과 함께하는 목표주가 설정하기!"></ContentsTitle>
-                        <div className='stock-page-target-price-box-container'>
-                            <TargetPriceBox
-                                title='순이익으로 주가 예상하기'
-                                factorName='PER'
-                                inputName='순이익'
-                                factorHigh={estimatesPerHigh}
-                                factorLow={estimatesPerLow}
-                                periodList={estimatesPeriodList}
-                                inputList={estimatesEpsList}
-                                unit={currency}></TargetPriceBox>
-                            <div className='stock-page-target-price-box-divider'></div>
-                            <TargetPriceBox
-                                title='매출로 주가 예상하기'
-                                factorName='PSR'
-                                inputName='순이익'
-                                factorHigh={estimatesPsrHigh}
-                                factorLow={estimatesPsrLow}
-                                periodList={estimatesPeriodList}
-                                inputList={estimatesSpsList}
-                                unit={currency}></TargetPriceBox>
-                        </div>
-                    </div>
-                    <div className="stock-page-horizontal-grey-line" style={{"marginTop":"10px"}}></div>
-                    <div>
-                        <ContentsTitle title='CEO 정보'></ContentsTitle>
-                        <LeaderBox
-                            leaderName={leaderName}
-                            leaderContentsList={leaderContentsList}></LeaderBox>
-                    </div>
+                <div className='page-contents'>
+                    <StockPriceBlock></StockPriceBlock>
+                    <StockPriceLineGraph></StockPriceLineGraph>
+                    <AddButton buttonText='추가하기'></AddButton>
+                    <TextWithVerticalBar textType='h2' leftText='텍스트1' rightText='텍스트2'></TextWithVerticalBar>
+                    <RoundedSearchInput placeholderText='종목을 입력하세요.'></RoundedSearchInput>
+                    <IconCircleButton></IconCircleButton>
+                    <Profile name='규빈'></Profile>
+                    <HorizontalBar height='1px' verticalMargin='30px'></HorizontalBar>
+                    <FocusedValue title='PER' value='30.0'></FocusedValue>
+                    <RoundedImage width='100px' height='100px' image={require('./images/icon_down.png')}></RoundedImage>
+                    <RoundedBar
+                        maxValue = {200000000}
+                        value = {-112023921}
+                        unit = 'won'
+                        period = '2022'
+                        maxHeight = {200}></RoundedBar>
+                    <TableHeader headerList={['제목1','제목2','제목3']}></TableHeader>
+                    <TableContents contentsList={['내용1','내용2','내용3']}></TableContents>
+                    <News link='https://www.hankyung.com/it/article/202206032798g'
+                          imageUrl='https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iTi0mDs9cdB4/v1/1400x-1.jpg'
+                          title='2위 삼성, 1위 애플과 격차 좁혔다…갤럭시워치 점유율 쑥'
+                          summary='올해 1분기 글로벌 스마트워치 시장에서 삼성전자(66,800 +0.15%)가 처음으로 두자릿수 점유율을 기록하며...'
+                          journal='한국경제일보'
+                          date='2022.06.03'></News>
+                    <IconTitle title='수익성' image={require('./images/icon_down.png')}></IconTitle>
+                    <IconMenu activatedImage={require('./images/icon_up.png')}
+                              deactivatedImage={require('./images/icon_down.png')}
+                              menuName={'메뉴'}
+                              currentState={'메뉴'}></IconMenu>
+                              
                 </div>
             </div>
             <BottomNavBar></BottomNavBar>
+            
         </div>
     )
 }

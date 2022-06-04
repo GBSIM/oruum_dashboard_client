@@ -1,0 +1,31 @@
+.add-button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.add-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;  
+}
+
+.add-button-icon {
+    width:30px;
+    height: 30px;
+    background-color: rgb(52,177,153);
+    -webkit-mask: url(./images/icon_plus.svg) no-repeat center;
+    mask: url(./images/icon_plus.svg) no-repeat center;
+}
+
+.add-button-icon:hover {
+    background-color: rgba(52,177,153,0.8);
+}
+
+.add-button-text {
+    color: #B9B9B9;
+}
+
+.add-button-text:hover {
+    color: rgba(185,185,185,0.8);
+}

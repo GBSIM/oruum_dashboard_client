@@ -1,0 +1,14 @@
+.name-button {
+    padding: 0px;
+    display: block;
+    margin-left: 10px;
+}
+
+.name {
+    color: rgb(51,51,51);
+    margin-bottom: 0px;
+}
+
+.name:hover {
+    color: rgba(51,51,51,0.8);
+}

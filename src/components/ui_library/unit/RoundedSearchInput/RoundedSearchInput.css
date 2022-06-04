@@ -1,0 +1,13 @@
+.rounded-search-input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rounded-search-input {
+    height: 40px;
+    width: 400px;
+    border: 1px solid #DCDCDC;
+    border-radius: 20px;
+    padding-left: 20px;
+}

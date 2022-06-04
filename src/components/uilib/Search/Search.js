@@ -36,7 +36,7 @@ function Search(props) {
                 <button type='button' className='search-button' onClick={searchStock}>
                     <img src={require('./images/icon_search.png')} className='search-button-image'></img>
                 </button>
-                <div class="loader"></div>
+                <div className="loader"></div>
                 {/* <span className='search-result'>
                     { status }
                 </span> */}

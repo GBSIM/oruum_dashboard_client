@@ -1,0 +1,17 @@
+.header-text-container {
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.header-text {
+    color: #696969;
+    display: flex;
+    flex: row;
+    justify-content: center;
+}
+
+.header-text-list-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

@@ -1,0 +1,23 @@
+.text-with-vertical-bar-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.left-text {
+    color: #34B199;
+    margin: 0;
+}
+
+.right-text {
+    color: #696969;
+    margin: 0;
+}
+
+.vertical-bar-between-text {
+    width: 2px;
+    min-height: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #B9B9B9;
+}

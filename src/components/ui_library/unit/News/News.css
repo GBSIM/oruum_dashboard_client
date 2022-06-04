@@ -1,0 +1,7 @@
+.news-container {
+    border-radius: 20px;
+}
+
+.news-container:hover {
+    background: #F8F8F8;
+}

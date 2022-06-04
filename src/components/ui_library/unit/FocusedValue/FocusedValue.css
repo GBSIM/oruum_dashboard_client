@@ -1,0 +1,16 @@
+.focused-value-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    flex: 1;;
+}
+
+.focused-value {
+    color: #34B199;
+    margin: 0px;
+    margin-left: 20px;
+}
+
+.focused-value-title {
+    color: #B9B9B9;
+}

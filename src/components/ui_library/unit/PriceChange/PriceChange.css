@@ -1,0 +1,12 @@
+.price-change {
+    margin-bottom: 0px;
+    margin-left: 10px;
+}
+
+.price-change.positive {
+    color: #34B199;
+}
+
+.price-change.negative {
+    color: #F15E5E;
+}

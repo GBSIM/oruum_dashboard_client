@@ -1,0 +1,18 @@
+.contents-text-container {
+    flex: 1;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.contents-text {
+    color: #696969;
+    display: flex;
+    flex: row;
+    justify-content: center;
+}
+
+.contents-text-list-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

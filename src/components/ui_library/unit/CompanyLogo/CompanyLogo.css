@@ -1,0 +1,15 @@
+.company-logo-container {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    background: #074B3F;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.compnay-logo-image {
+    object-fit: cover;
+    fill: #fff;
+}

@@ -1,0 +1,11 @@
+.rounded-button {
+    margin-right: 10px;
+    padding: 20px 5px 20px 5px;
+    border-radius: 50px;
+    background: rgb(52,177,153);
+    border-radius: #fff;
+}
+
+.rounded-button:hover {
+    background: rgba(52,177,153,0.8);
+}
