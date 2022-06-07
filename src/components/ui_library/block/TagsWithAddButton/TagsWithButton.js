@@ -11,7 +11,7 @@ export default function TagsWithButton(props) {
     return (
         <div className='tags-container'>
             <Tags tagList = {tagList}></Tags>
-            <AddButton buttonText={buttonText}></AddButton>
+            <AddButton buttonText={buttonText} editInputSubmitEvent={props.editInputSubmitEvent} editInputChangeEvent={props.editInputChangeEvent}></AddButton>
         </div>
     )
 }

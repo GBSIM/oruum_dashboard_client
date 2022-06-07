@@ -2,9 +2,11 @@ import './IconText.css';
 
 export default function IconText(props) {
     return (
-        <div style={{display:'flex',flexDirection:'row',alignItems:'center',marginTop:'10px'}}>
-            <img src={props.image}></img>
-            <span style={{color:'#696969',marginLeft:'10px'}}>{props.text}</span>
+        <div className='icon-text-container'>
+            <img src={props.image} alt='texticon'></img>
+            <button className='icon-text-button'>
+                <span className='icon-text'>{props.text}</span>
+            </button>
         </div>
     )
 }

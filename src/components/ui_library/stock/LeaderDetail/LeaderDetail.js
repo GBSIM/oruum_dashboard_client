@@ -10,7 +10,8 @@ export default function LeaderDetail() {
     const LeaderContentsList = leaderContentsList.map((leaderContents,index) => (
         <IconText
             image={require('./images/icon_detail.png')}
-            text={leaderContents}></IconText>
+            text={leaderContents}
+            key={index}></IconText>
     ));
 
     return (

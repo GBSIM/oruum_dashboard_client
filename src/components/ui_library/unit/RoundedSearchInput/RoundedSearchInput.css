@@ -11,3 +11,7 @@
     border-radius: 20px;
     padding-left: 20px;
 }
+
+.rounded-search-input:focus {
+    outline: none;
+}

@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex: 1;
     margin-right: 10px;
 }
 
@@ -16,7 +17,7 @@
 
 .rounded-bar {
     margin-top: 5px;
-    width: 50px;
+    width: 100%;
     border-radius: 5px;
 }
 

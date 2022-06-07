@@ -1,0 +1,17 @@
+.icon-text-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 10px;    
+}
+
+.icon-text-button {
+    color: #696969;
+    margin-left: 10px;
+    display: block;
+    text-align: left;    
+}
+
+.icon-text-button:hover {
+    color: rgba(105,105,105,0.8);
+}

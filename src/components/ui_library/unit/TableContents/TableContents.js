@@ -2,7 +2,7 @@ import HorizontalBar from '../HorizontalBar/HorizontalBar';
 
 import './TableContents.css';
 
-export default function(props) {
+export default function TableContents(props) {
     const contentsList = props.contentsList;
 
     const ContentsTextList = contentsList.map((content,index) => 

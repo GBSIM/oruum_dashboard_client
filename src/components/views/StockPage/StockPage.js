@@ -32,8 +32,9 @@ export default function StockPage() {
                     <StockTags></StockTags>            
                     <StockPriceLineGraph></StockPriceLineGraph>
                     <div style={{minHeight:'30px'}}></div>
-                    <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
+                    <div className='stock-page-check-point-container'>
                         <StockBuyPoint></StockBuyPoint>
+                        <div className='stock-page-check-point-spacer'></div>
                         <StockSellPoint></StockSellPoint>
                     </div>
                     <HorizontalBar height='1px' horizontalMargin='0px' verticalMargin='30px'></HorizontalBar>

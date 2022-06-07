@@ -21,9 +21,9 @@ export default function RoundedBarGraph(props) {
     ));
 
     return (
-        <div>
+        <div style={{flex:'1',width:'100%'}}>
             <h3 style={{margin:'0px',color:'#696969'}}>{title}</h3>
-            <div style={{display:'flex',flexDirection:'row',alignItems:'flex-end'}}>
+            <div style={{display:'flex',flexDirection:'row',alignItems:'flex-end',justifyContent:'space-around'}}>
                 {RoundedBarList}
             </div>
         </div>

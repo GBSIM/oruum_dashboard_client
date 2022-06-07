@@ -10,7 +10,7 @@ export default function RoundedImage(props) {
                     height: props.height
                 }}
                 src={props.image}
-                alt='round image'></img>
+                alt='round'></img>
         </div>
     )
 }

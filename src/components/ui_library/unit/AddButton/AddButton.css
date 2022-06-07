@@ -1,5 +1,5 @@
 .add-button-container {
-    display: flex;
+    max-width: 200px;
     flex-direction: row;
     align-items: center;
 }
@@ -30,4 +30,10 @@
 
 .add-button-text:hover {
     color: rgba(185,185,185,0.8);
+}
+
+@media (max-width: 600px) {
+    .add-button-container {
+        display: none;
+    }
 }

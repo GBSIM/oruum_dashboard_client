@@ -7,7 +7,7 @@ Chart.register(...registerables);
 
 export default function StockPriceLineGraph() {
     const {plotPeriod,date,close} = useSelector(state => state.stock);
-    const periodList = ['1일','1주','1달','3달','6달','1년','2년','5년','10년','모두'];
+    const periodList = ['1주','1달','3달','6달','1년','2년','5년','모두'];
 
     const periodButtonList = periodList.map((period,index) => (
         <PeriodButton periodName={period} key={index} activatedPeriod={plotPeriod}></PeriodButton>

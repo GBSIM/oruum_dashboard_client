@@ -5,6 +5,8 @@ export const SEARCHSUCCESS = "STOCK/SEARCHSUCCESS";
 export const SEARCHFAIL = "STOCK/SEARCHFAIL";
 export const TYPING = "STOCK/TYPING";
 export const SEARCHSTATUS = "STOCK/SEARCHSTATUS";
+export const ADDSTOCKTAG = 'STOCK/ADDSTOCKTAG';
+export const EDITSTOCKTAG = 'STOCK/EDITSTOCKTAG';
 
 const initialState = {
     input: "AAPL",
@@ -55,7 +57,7 @@ const initialState = {
     // financial information
     dividend: 0.22,
     EPS: 7.8,
-    incomeYearList: ['2018','2019','2020','2021','2022(E)'],
+    incomeYearList: ['2018','2019','2020','2021','2022'],
     revenueList: [20,40,60,100,150],
     operatingincomeList: [-50,-30,-20,60,100],
     netProfitList: [-50,-40,-10,50,80],
@@ -85,6 +87,7 @@ const initialState = {
     
     // oruum contents
     tagList: ['태그 1','태그 2','태그 3','태그 4'],
+    newTag: "",
     checkListBuy: ['매수 체크리스트1','매수 체크리스트2','매수 체크리스트3'],
     checkListSell: ['매도 체크리스트1','매도 체크리스트2','매도 체크리스트3'],
     productList: ['아이폰', '아이패드'],
@@ -150,6 +153,20 @@ export function setStatus(status) {
     }
 }
 
+export function addStockTag(newTag) {
+    return ({
+        type: ADDSTOCKTAG,
+        newTag: newTag
+    })
+}
+
+export function editNewStockTag(newTagInput) {
+    return ({
+        type: EDITSTOCKTAG,
+        newTagInput: newTagInput
+    })
+}
+
 const stock = (state = initialState, action) => {
   switch (action.type) {
     case SEARCHSUCCESS:
@@ -189,6 +206,18 @@ const stock = (state = initialState, action) => {
       return {
         ...state,
         status: action.status
+      }
+
+    case ADDSTOCKTAG:
+      return {
+        ...state,
+        tagList: [...state.tagList, action.newTag]
+      }
+
+    case EDITSTOCKTAG:
+      return {
+        ...state,
+        newTag: action.newTagInput
       }
 
     default:

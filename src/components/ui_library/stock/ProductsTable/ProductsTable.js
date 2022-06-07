@@ -15,7 +15,8 @@ export default function ProductsTable() {
             contentsList={[product,
                            productSalesRatioList[index],
                            productGrowthList[index],
-                           <TagsWithButton tagList={productTagLists[index]}></TagsWithButton>]}></TableContents>
+                           <TagsWithButton tagList={productTagLists[index]} 
+            key={index}></TagsWithButton>]}></TableContents>
     ))
 
     return (

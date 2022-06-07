@@ -6,3 +6,9 @@
     height: 100vh;
     border-right: 1px solid #DCDCDC;
 }
+
+@media (max-width: 1024px) {
+    .side-nav-menu-bar-container {
+        display: none;
+    }
+}

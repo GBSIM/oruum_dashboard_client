@@ -4,3 +4,15 @@
     justify-content: space-between;
     align-items: center;
 }
+
+@media (max-width: 600px) {
+    .income-rounded-bar-graphs-container {
+        flex-direction: column;
+    }
+    .income-rounded-bar-graphs-vertical-bar {
+        display: none;
+    }
+    .income-rounded-bar-graphs-spacer {
+        min-height: 20px;
+    }
+}

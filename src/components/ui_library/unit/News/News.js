@@ -17,11 +17,13 @@ export default function News(props) {
                href={link}
                className='news-container' 
                style={{display:'flex',flexDirection:'row',marginTop:'20px',alignContent:'center'}}>
-                <RoundedImage
-                    height='100px'
-                    width='100px'
-                    image={props.imageUrl}></RoundedImage>
-                <div style={{marginLeft:'15px'}}>
+                <div className='news-image-container'>
+                    <RoundedImage
+                        height='100px'
+                        width='100px'
+                        image={imageUrl}></RoundedImage>
+                </div>
+                <div className='news-text-container'>
                     <h2 style={{color:'#34B199',margin:'0px'}}>{title}</h2>
                     <div style={{marginTop:'10px'}}>
                         <span style={{color:'#696969',marginTop:'10px'}}>{summary}</span>

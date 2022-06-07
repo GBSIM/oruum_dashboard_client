@@ -12,7 +12,8 @@ export default function ProductsDetail() {
         <ProductDetail 
             product={product}
             summary={productSummaryList[index]}
-            detailList={productDetailLists[index]}></ProductDetail>
+            detailList={productDetailLists[index]}
+            key={index}></ProductDetail>
     ));
 
 

@@ -17,3 +17,12 @@
     flex-direction: row;
     align-items: center;
 }
+
+@media (max-width: 600px) {
+    .header-search-form {
+        display: none;
+    }
+    .header-container {
+        height: 45px;
+    }
+}
