@@ -12,17 +12,27 @@
     z-index: 1;
 }
 
-.header-search-form {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.header-logo-image {
+    height: 40px;
+    margin-right: 10px;
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .header-logo-image {
+        display: flex;
+    }   
 }
 
 @media (max-width: 600px) {
-    .header-search-form {
+    .header-search-form-container {
         display: none;
     }
     .header-container {
         height: 45px;
+        justify-content: center;
+    }
+    .header-logo-image {
+        height: 35px;
     }
 }

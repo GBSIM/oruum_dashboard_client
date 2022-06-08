@@ -1,5 +1,6 @@
 .news-container {
-    border-radius: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 .news-container:hover {

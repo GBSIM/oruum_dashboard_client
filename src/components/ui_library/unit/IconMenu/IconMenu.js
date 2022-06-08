@@ -41,21 +41,17 @@ export default function IconMenu(props) {
 
     if (menuName === currentPage) {
         return (
-            <div style={{display:'flex',flexDirection:'row',alignItems:'center',marginTop:'20px'}}>
+            <button className='icon-menu-container'>
                 <img src={activatedImage} style={{width:'24px',height:'24px'}} alt={menuName}></img>
-                <button>
-                    <span className="icon-menu on">{menuName}</span>
-                </button>
-            </div>
+                <span className="icon-menu on">{menuName}</span>
+            </button>
         )
     } else {
         return (
-            <div style={{display:'flex',flexDirection:'row',alignItems:'center',marginTop:'20px'}}>
+            <button className='icon-menu-container' onClick={navtigatePage}>
                 <img src={deactivatedImage} style={{width:'24px',height:'24px'}} alt={menuName}></img>
-                <button onClick={navtigatePage}>
-                    <span className="icon-menu off">{menuName}</span>
-                </button>
-            </div>
+                <span className="icon-menu off">{menuName}</span>
+            </button>
         )
     }
 }

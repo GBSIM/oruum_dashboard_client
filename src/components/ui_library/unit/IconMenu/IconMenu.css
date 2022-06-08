@@ -10,3 +10,21 @@
 .icon-menu.on {
     color: #333333;
 }
+
+.icon-menu-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+    .icon-menu {
+        display: none;
+    }
+
+    .icon-menu-container {
+        margin: 0px;
+    }
+    
+}

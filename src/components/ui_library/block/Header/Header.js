@@ -1,16 +1,14 @@
-import RoundedSearchInput from '../../unit/RoundedSearchInput/RoundedSearchInput';
-import IconCircleButton from '../../unit/IconCircleButton/IconCircleButton';
+import SearchForm from '../SearchForm/SearchForm';
 
 import './Header.css';
 
 export default function Header(props) {
     return (
         <div className='header-container'>
-            <form className='header-search-form'>
-                <RoundedSearchInput placeholderText='종목을 입력하세요!'></RoundedSearchInput>
-                <div style={{minWidth:'10px'}}></div>
-                <IconCircleButton></IconCircleButton>
-            </form>
+            <img src={require('./images/image_oruum_logo.png')} className='header-logo-image'></img>
+            <div className='header-search-form-container'>
+                <SearchForm></SearchForm>
+            </div>
         </div>
     )
 }

@@ -2,7 +2,7 @@ import './EconomyPage.css';
 import '../../../default.css';
 import SideNavMenuBar from '../../ui_library/block/SideNavMenuBar/SideNavMenuBar';
 import Header from '../../ui_library/block/Header/Header';
-import BottomNavBar from '../../uilib/NavBar/BottomNavBar';
+import BottomNavMenuBar from '../../ui_library/block/BottomNavMenuBar/BottomNavMenuBar';
 
 function EconomyPage() {
     return (
@@ -15,7 +15,7 @@ function EconomyPage() {
                     
                 </div>
             </div>
-            <BottomNavBar></BottomNavBar>
+            <BottomNavMenuBar></BottomNavMenuBar>
         </div>
     )
 }

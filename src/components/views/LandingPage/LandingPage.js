@@ -1,8 +1,8 @@
 import './LandingPage.css';
 import '../../../default.css';
 import SideNavMenuBar from '../../ui_library/block/SideNavMenuBar/SideNavMenuBar';
+import BottomNavMenuBar from '../../ui_library/block/BottomNavMenuBar/BottomNavMenuBar';
 import Header from '../../ui_library/block/Header/Header';
-import BottomNavBar from '../../uilib/NavBar/BottomNavBar';
 
 function LandingPage() {
     return (
@@ -15,7 +15,7 @@ function LandingPage() {
                     
                 </div>
             </div>
-            <BottomNavBar></BottomNavBar>
+            <BottomNavMenuBar></BottomNavMenuBar>
         </div>
     )
 }
