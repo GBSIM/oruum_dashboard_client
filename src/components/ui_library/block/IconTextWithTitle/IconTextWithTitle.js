@@ -1,20 +1,18 @@
-import './IconTextWithTitle';
+import { useState } from 'react';
+import './IconTextWithTitle.css';
 import ContentsTitle from '../../unit/ContentsTitle/ContentsTitle';
 import IconText from '../../unit/IconText/IconText';
+import IconTextList from '../IconTextList/IconTextList';
 
 export default function IconTextWithTitle(props) {
     const title = props.title;
     const image = props.image;
     const textList = props.textList;
 
-    const IconTextList = textList.map((text,index) => (
-        <IconText image={image} key={index} text={text}></IconText>
-    ))
-
     return (
         <div>
             <ContentsTitle title={title}></ContentsTitle>
-            {IconTextList}
+            <IconTextList image={image} textList={textList}></IconTextList>
             <div style={{minHeight:'10px'}}></div>
         </div>
     )

@@ -1,5 +1,7 @@
 .rounded-button {
     margin-right: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
     padding: 3px 15px 3px 15px;
     border-radius: 50px;
     background: rgb(52,177,153);

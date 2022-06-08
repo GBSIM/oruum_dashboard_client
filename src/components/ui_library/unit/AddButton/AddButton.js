@@ -9,8 +9,12 @@ export default function AddButton(props) {
 
     const addButtonClickEvent = () => {setEditFlag(true);};
     
-    const editKeyDownEvent =(event) => {
+    const editKeyDownEvent = (event) => {
         if (event.key === 'Escape') {
+            setEditFlag(false);
+        }
+        if (event.key === 'Enter') {
+            props.tagAddEvent(event.target.value);
             setEditFlag(false);
         }
     }
@@ -26,7 +30,7 @@ export default function AddButton(props) {
         )
     } else {
         return (
-            <EditInput submitEvent={props.editInputSubmitEvent} keyDownEvent={editKeyDownEvent} editInputChangeEvent={props.editInputChangeEvent}></EditInput>
+            <EditInput keyDownEvent={editKeyDownEvent}></EditInput>
         )
     }
 

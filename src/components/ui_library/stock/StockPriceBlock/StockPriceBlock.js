@@ -14,7 +14,7 @@ export default function StockPriceBlock() {
     return (
         <div className='stock-price-block-container'>
             <CompanyLogo></CompanyLogo>
-            <div>
+            <div style={{marginLeft:'10px'}}>
                 <div className='stock-name-block'>
                     <Name></Name><Ticker></Ticker>
                 </div>

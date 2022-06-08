@@ -1,7 +1,7 @@
 .icon-text-container {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     margin-top: 10px;    
 }
 
@@ -9,7 +9,7 @@
     color: #696969;
     margin-left: 10px;
     display: block;
-    text-align: left;    
+    text-align: left;
 }
 
 .icon-text-button:hover {

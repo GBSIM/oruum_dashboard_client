@@ -2,6 +2,7 @@ import ContentsTitle from "../../unit/ContentsTitle/ContentsTitle";
 import TextWithVerticalBar from "../../unit/TextWithVerticalBar/TextWithVerticalBar";
 import IconText from "../../unit/IconText/IconText";
 import AddButton from "../../unit/AddButton/AddButton";
+import IconTextList from "../../block/IconTextList/IconTextList";
 
 import { useSelector } from "react-redux";
 
@@ -30,9 +31,9 @@ function ProductDetail(props) {
     const summary = props.summary;
     const detailList = props.detailList;
 
-    const DetailList = detailList.map((detail,index) => (
-        <IconText image={require('./images/icon_detail.png')} text={detail}></IconText>
-    ))
+    const DetailList = <IconTextList 
+                            textList={detailList} 
+                            image={require('./images/icon_detail.png')}></IconTextList>;
 
     let rightText = "";
     if (summary === "") {

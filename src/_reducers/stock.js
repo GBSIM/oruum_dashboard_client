@@ -87,7 +87,6 @@ const initialState = {
     
     // oruum contents
     tagList: ['태그 1','태그 2','태그 3','태그 4'],
-    newTag: "",
     checkListBuy: ['매수 체크리스트1','매수 체크리스트2','매수 체크리스트3'],
     checkListSell: ['매도 체크리스트1','매도 체크리스트2','매도 체크리스트3'],
     productList: ['아이폰', '아이패드'],
@@ -151,20 +150,6 @@ export function setStatus(status) {
         type: SEARCHSTATUS,
         status: status
     }
-}
-
-export function addStockTag(newTag) {
-    return ({
-        type: ADDSTOCKTAG,
-        newTag: newTag
-    })
-}
-
-export function editNewStockTag(newTagInput) {
-    return ({
-        type: EDITSTOCKTAG,
-        newTagInput: newTagInput
-    })
 }
 
 const stock = (state = initialState, action) => {
