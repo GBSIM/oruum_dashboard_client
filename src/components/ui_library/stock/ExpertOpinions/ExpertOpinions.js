@@ -13,7 +13,7 @@ export default function ExpertOpinions() {
     ));
 
     return (
-        <div>
+        <div style={{flex:'1',width:'100%'}}>
             <TableHeader
                 headerList={['의견','개수','비율']}></TableHeader>
             {OpinionList}

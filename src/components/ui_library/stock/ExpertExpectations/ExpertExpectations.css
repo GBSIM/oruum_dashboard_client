@@ -1,0 +1,11 @@
+.expert-expectations-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media (max-width: 1600px) {
+    .expert-expectations-container {
+        flex-direction: column;
+    }
+}

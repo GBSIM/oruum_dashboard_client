@@ -1,0 +1,50 @@
+.expert-target-prices-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.target-price-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: baseline;
+    width: 200px;
+}
+
+.current-price-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    width: 200px;
+}
+
+.target-price-title {
+    color: #B9B9B9;
+}
+
+.target-price {
+    margin-left: 10px;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.round-ball-with-value-margin-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.round-ball {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+@media (max-width: 600px) {
+    .expert-target-prices-container {
+        display: none;
+    }
+}
